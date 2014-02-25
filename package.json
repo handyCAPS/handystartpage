@@ -1,0 +1,28 @@
+{
+  "name": "handystartpage",
+  "version": "0.0.1",
+  "author": {
+    "name": "Tim Doppenberg"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-watch": "~0.4.3",
+    "grunt-contrib-uglify": "~0.2.5",
+    "load-grunt-tasks": "~0.2.1",
+    "grunt-phpcs": "~0.2.1",
+    "grunt-contrib-jshint": "~0.7.2",
+    "grunt-notify": "~0.2.16",
+    "grunt-contrib-copy": "~0.5.0",
+    "jpegtran-bin": "~0.2.3",
+    "grunt-contrib-imagemin": "~0.5.0",
+    "grunt-rm": "0.0.4",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-sass": "~0.6.0",
+    "grunt-autoprefixer": "~0.6.4",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-image-resize": "~0.3.0",
+    "bower": "~1.2.8",
+    "grunt-bower-requirejs": "~0.8.4"
+  }
+}

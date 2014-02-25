@@ -1,0 +1,51 @@
+legend {
+	background-color: #CCC;
+	padding: 2px 6px;
+	border-radius: 3px;
+}
+
+fieldset {
+	padding: 16px;
+	border: 1px solid #AAA;
+	border-radius: 3px;
+}
+
+input, select {
+	margin-right: 6px;
+	border-radius: 0px 2.6px 2.6px 0px;
+	padding: 1.5px 2px;
+	border: none;
+}
+
+input.long {
+	width: 8.3em;
+}
+
+input.medium {
+	width: 6.2em;
+}
+
+input.short {
+	width: 2.4em;
+}
+
+input, label, select {
+	height: 28.5px;
+	vertical-align: middle;
+	border: none;
+	padding: 5px;
+}
+
+label {
+	background-color: #ACC;
+	border-radius: 3px 0 0 3px;
+	padding: 4px;
+	margin-right: -3px;
+	font-size: 0.9em;
+}
+
+input[type='submit'], input[type="button"] {
+	height: 28.5px;
+	border-radius: 3px;
+	cursor: pointer;
+}

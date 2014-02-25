@@ -1,0 +1,49 @@
+.closex {
+	width: 12px;
+	height: 12px;
+	margin: 3px;
+	display: inline-block;
+	position: relative;
+	top: 2px;
+	transform: rotate(45deg);
+}
+
+.closex:before, .closex:after {
+  content: "";
+  position: absolute;
+  background: #F20000;
+  border: 1px solid #000;
+}
+
+.closex:before {
+  left: 50%;
+  width: 20%;
+  margin-left: -15%;
+  height: 100%;
+}
+
+.closex:after {
+  top: 6px;
+  left: 0;
+  height: 20%;
+  margin-top: -15%;
+  width: 100%;
+  text-align: none;
+}
+
+.closexWrap {
+	display: inline-block;
+	cursor: pointer;
+	border: 1px solid #000;
+	border-radius: 50%;
+	background-color: #CCC;
+	position: absolute;
+	top: 2px;
+	right: -6px;
+	box-shadow: 0 0 0 2px #FFF;
+	transition: all 1.3s ease;
+}
+.closexWrap:hover {
+	box-shadow: 0 0 0 2px #FFF,0 0 10px 2px #F0F;
+	transform: rotate(360deg);
+}

@@ -1,0 +1,29 @@
+{
+  "name": "start",
+  "version": "0.1.0",
+  "homepage": "https://github.com/handyCAPS/handystartpage",
+  "authors": [
+    "handyCAPS"
+  ],
+  "description": "A fast easy and handy way to organise links",
+  "main": "index.php",
+  "keywords": [
+    "Homepage",
+    "startpage"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.0",
+    "get-size": "desandro/get-size#>=1.1.4 <2.0",
+    "outlayer": ">=1.1.2 <2.0",
+    "masonry": "~3.1.4",
+    "requirejs": "~2.1.11"
+  }
+}

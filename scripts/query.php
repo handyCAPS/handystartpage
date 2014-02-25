@@ -1,0 +1,38 @@
+<?php
+
+function ask_the_db($db, $table, $select = '*', $where = '', $order = '', $dir = '', $limit = '') {
+	if ($where !== '') {
+		$where = "WHERE " . $where;
+	}
+	if ($order !== '') {
+		$order = "ORDER BY " . $order;
+	}
+	if ($limit !== '') {
+		$limit = "LIMIT " . $limit;
+	}
+	$result_array = array();
+
+	$sql = "SELECT $select FROM $table $where $order $dir $limit";
+	if ($results = $db->query($sql)) {
+		while ($row = $results->fetch_assoc()) {
+			array_push($result_array, $row);
+		}
+	}
+	return $result_array;
+}
+
+function update_the_db($db, $table, $rows, $where) {
+	$sql = "UPDATE $table SET $rows WHERE $where";
+	$results = $db->query($sql);
+	return $results;
+}
+
+function add_to_the_db($db, $table, $rows, $values) {
+	$sql = "INSERT INTO $table ($rows) VALUES ($values)";
+	return $results = $db->query($sql);
+}
+
+function remove_from_the_db($db, $table, $where) {
+	$sql = "DELETE FROM $table WHERE $where";
+	return $results = $db->query($sql);
+}
