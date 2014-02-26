@@ -3,6 +3,7 @@
 require_once 'db/connection.php';
 
 $link = $db->real_escape_string(trim($_POST['link']));
+// $link = urlencode($link);
 $name = $db->real_escape_string(trim(ucfirst($_POST['name'])));
 $cat_id = $db->real_escape_string(trim($_POST['cat_id']));
 $image = $db->real_escape_string(trim($_POST['image']));

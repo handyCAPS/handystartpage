@@ -47,6 +47,8 @@ Finally you need to give the link an order. This can be an integer (whole number
 - Automate setting up the db
 - Build a drag and drop ordering interface for the links and the categories
 - Add a short description to the links that will show on hovering the images
+- Hook up all the js through require
+- Make subcategories that will have their own page ?
 - Find or make a quirky and loveable drawing to be my logo
 - Get a cool sounding name that's missing a vowel
 

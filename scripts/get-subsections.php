@@ -6,7 +6,7 @@
  * @param  Object $db         The db connection
  * @param  Array $full_array  All the link info
  * @param  Integer $cat_id    The id of the category
- * @return Array             An array of strings of html elements
+ * @return Array              An array of strings containing html elements
  */
 function get_the_links($db, $full_array, $cat_id) {
 	$link_array = array();
@@ -21,9 +21,7 @@ function get_the_links($db, $full_array, $cat_id) {
 			. $assoc['image']
 			. "' alt='"
 			. $assoc['name']
-			. " ["
-			. $assoc['link_order']
-			. "]' title='"
+			. "' title='"
 			. $assoc['name']
 			. " ["
 			. $assoc['link_order']
@@ -54,7 +52,7 @@ function get_the_sub_sections($db, $cat_array, $all_the_links) {
 	$subsec_string = '';
 	for ($m = 0; $m < count($cat_array); $m++) {
 		$sub_section =
-		  "<div class='sub-sections'><a href='?update=links&category="
+		  "<div class='sub-sections'><a href='?update=links&amp;category="
 		. $cat_array[$m]['cat_id']
 		. "'><div class='edit-button' data-catid='"
 		. $cat_array[$m]['cat_id']

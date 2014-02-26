@@ -12,15 +12,13 @@ function get_bestof($db, $n = 10) {
 	foreach ($results as $key => $array) {
 		$link = "<a href='"
 		. $array['link']
-		. "' target='_blank' id='"
+		. "' target='_blank' id='best"
 		. $array['id']
 		. "'><img src='dist/images/"
 		. $array['image']
 		. "' alt='"
 		. $array['name']
-		. " ["
-		. $array['clicks']
-		. "]' title='"
+		. "' title='"
 		. $array['name']
 		. " ["
 		. $array['clicks']
