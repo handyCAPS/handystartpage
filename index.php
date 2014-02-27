@@ -11,9 +11,11 @@
 	// Deciding what views to include based on the parameters in the url
 	switch (true) {
 		case isset($_REQUEST["update"]) :
-		// If update is set, we check what to update
+			require_once 'scripts/get-update-forms.php';
+			// If update is set, we check what to update
 			switch ($_REQUEST['update']) {
 				case 'links' :
+
 					include 'views/update-list.php';
 					break;
 				case 'cats' :
