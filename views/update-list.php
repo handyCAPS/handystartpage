@@ -20,7 +20,7 @@ $cat_nameA = ask_the_db($db, 'categories', 'cat_name', 'cat_id = ' . $category);
 $cat_name = $cat_nameA[0]['cat_name'];
 
 echo "<h1>$cat_name</h1>";
-echo '<A href="index.php"><div id="home"></div></a>';
+echo '<a href="index.php"><div id="home"></div></a><a href="#"><div class="clear-clicks">Clear Clicks</div></a>';
 
 function list_the_list_forms($db, $cat) {
 
