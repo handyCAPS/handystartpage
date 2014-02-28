@@ -6,15 +6,15 @@
  * @param  Int 		$n 							Number of links to return
  * @return string $bestof_string	String containing html elements
  */
-function get_bestof($db, $n = 10) {
+function get_bestof($db, $n = 13) {
 	$bestof_string = '';
 	$results = ask_the_db($db, 'links', '*','', 'clicks', 'DESC', $n);
 	foreach ($results as $key => $array) {
-		$link = "<a href='"
+		$link = "<div class='container'><a href='"
 		. $array['link']
 		. "' target='_blank' id='best"
 		. $array['id']
-		. "'><img src='dist/images/"
+		. "'><div class='flipper'><img src='dist/images/"
 		. $array['image']
 		. "' alt='"
 		. $array['name']
@@ -22,7 +22,9 @@ function get_bestof($db, $n = 10) {
 		. $array['name']
 		. " ["
 		. $array['clicks']
-		. "]'></a>";
+		. "]'><div class='description'><p>"
+		. $array['description']
+		. "<p></div></div></a></div>";
 		$bestof_string .= $link;
 	}
 	return $bestof_string;

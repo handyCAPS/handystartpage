@@ -1,6 +1,6 @@
 <?php
 require_once 'scripts/get-cat-name.php';
-$category = $_REQUEST['category']
+$category = $_REQUEST['category'];
 ?>
 
 <h1><?php echo get_cat_name($db, $category); ?></h1>

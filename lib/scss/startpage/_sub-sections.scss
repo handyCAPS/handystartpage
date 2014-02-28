@@ -8,6 +8,7 @@
 	margin-bottom: 24px;
 	padding: 4px 12px;
 	position: relative;
+	text-align: center;
 		h2 {
 			display: inline-block;
 			font-family: 'Open Sans',Verdana, Arial sans-serif;
@@ -21,9 +22,6 @@
 			padding: 0 5px;
 			margin: 0;
 			text-shadow: 1px 1px 1px #222;
-		}
-		p {
-			text-align: center;
 		}
 }
 
@@ -53,6 +51,7 @@
 	border-top-color: #ccc;
 	position: absolute;
 	bottom: -16px;
+	left: 0;
 	transition: all 0.3s ease 0.5s;
 }
 .edit-button:hover {

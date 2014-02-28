@@ -6,7 +6,7 @@
 
 A home page listing all your collected links, displaying them with an image. You can set a descriptive name which will appear as a tooltip when hovering the link. The links are categorised by your chosen names and ordered by a specified order number. At the top of the page, a best of section appears, listing the ten most clicked links.
 
-Yes, it's horribly coded and full of bad practices at the moment, but that will get better with every commit. Right now it's just here for some friends to play with. I made it to learn html and css at first and now using it to get better with php, mysql, javascript and whatever else I might think of. Plus it's kinda useful to have all my links in one convenient place.
+Yes, it's ~~horribly~~ not brilliantly coded and full of bad practices at the moment, but that will get better with every commit. Right now it's just here for some friends to play with. I made it to learn html and css at first and now using it to get better with php, mysql, javascript and whatever else I might think of. Plus it's kinda useful to have all my links in one convenient place.
 
 ## Requires
 -----------
@@ -46,7 +46,7 @@ Finally you need to give the link an order. This can be an integer (whole number
 - Refactor code. This will be ongoing.
 - Automate setting up the db
 - Build a drag and drop ordering interface for the links and the categories
-- Add a short description to the links that will show on hovering the images
+- Add a range selector to select the number of links in the Best Of
 - Hook up all the js through require
 - Make subcategories that will have their own page ?
 - Find or make a quirky and loveable drawing to be my logo

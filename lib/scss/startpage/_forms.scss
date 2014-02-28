@@ -10,7 +10,7 @@ fieldset {
 	border-radius: 3px;
 }
 
-input, select {
+input, select, textarea {
 	margin-right: 6px;
 	border-radius: 0px 2.6px 2.6px 0px;
 	padding: 1.5px 2px;
@@ -29,11 +29,15 @@ input.short {
 	width: 2.4em;
 }
 
-input, label, select {
+input, label, select, textarea {
 	height: 28.5px;
 	vertical-align: middle;
 	border: none;
 	padding: 5px;
+}
+
+textarea {
+	width: 108px;
 }
 
 label {

@@ -1,4 +1,4 @@
-/*! handystartpage - v0.0.1 - 2014-02-23
+/*! handystartpage - v0.0.1 - 2014-02-27
 * Copyright (c) 2014 Tim Doppenberg; Licensed  */
 $(document).ready(function() {
 
@@ -82,11 +82,23 @@ $(document).ready(function() {
 				}
 			}
 			showThePreview(previewImage,imgId);
-			console.log(typeof window.$('.preview-image'));
 		});
 
 		$('input[name="image"]').on('mouseout focusin', function(event) {
 			var imgId = '#prev' + $(this).parent().context.id;
 			$(imgId).remove();
+		});
+
+		$('#description').on('focusin', function() {
+			$(this).animate({
+				'height': '+=119px',
+				'width': '+=40px'
+			});
+		});
+		$('#description').on('focusout', function() {
+			$(this).animate({
+				'height': '-=119px',
+				'width': '-=40px'
+			});
 		});
 	});

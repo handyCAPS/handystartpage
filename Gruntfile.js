@@ -137,6 +137,10 @@ module.exports = function(grunt) {
         files: '<%= jshint.lib_test.src %>',
         tasks: ['jshint:lib_test']
       },
+      js: {
+        files: ['lib/**/*.js'],
+        tasks: ['concat', 'uglify']
+      },
       php: {
         files: ['**/*.php'],
         tasks: []

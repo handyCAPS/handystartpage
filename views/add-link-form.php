@@ -13,6 +13,8 @@
 		<?php
 		echo category_options($db);
 		?>
+		<label for="description">Description</label>
+		<textarea name="description" id="description" class="desc"></textarea>
 		<label for="link_order">Order</label>
 		<input type="number" id="link_order" name="link_order" class="short" required>
 		<input type="submit" value="submit">

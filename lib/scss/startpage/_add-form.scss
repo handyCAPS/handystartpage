@@ -9,48 +9,42 @@
 
 .show-add-form {
 	position: absolute;
-	top: 168px;
+	top: 148px;
 	width: 24px;
 	height: 24px;
 	border-radius: 50%;
 	background-color: #ccc;
 	cursor: pointer;
 	transition: all 0.5s ease-out;
-}
-.show-add-form:before, .show-add-form:after {
-	content: '';
-	display: block;
-	position: absolute;
-	border-radius: 4px;
-	cursor: pointer;
-	background-color: #000;
-}
-.show-add-form:after {
-	top: 10px;
-	left: 4px;
-	width: 16px;
-	height: 4px;
-}
-.show-add-form:before {
-	top: 4px;
-	left: 10px;
-	width: 4px;
-	height: 16px;
-}
-.show-add-form:hover, .show-add-form:active {
-	-webkit-transform: rotate(-360deg) scale(1.3) translateZ(0);
-	-moz-transform: rotate(-360deg) scale(1.3) translateZ(0);
-	-ms-transform: rotate(-360deg) scale(1.3) translateZ(0);
-	-o-transform: rotate(-360deg) scale(1.3) translateZ(0);
-	transform: rotate(-360deg) scale(1.3) translateZ(0);
-	-webkit-box-shadow: 0 0 10px #F0F;
-	-moz-box-shadow: 0 0 10px #F0F;
-	box-shadow: 0 0 10px #F0F;
+		&:before, &:after {
+			content: '';
+			display: block;
+			position: absolute;
+			border-radius: 4px;
+			cursor: pointer;
+			background-color: #000;
+		}
+		&:after {
+			top: 10px;
+			left: 4px;
+			width: 16px;
+			height: 4px;
+		}
+		&:before {
+			top: 4px;
+			left: 10px;
+			width: 4px;
+			height: 16px;
+		}
+		&:hover, &:active {
+			transform: rotate(-360deg) scale(1.3);
+			box-shadow: 0 0 10px #F0F;
+		}
 }
 
 .add-form {
 	display: none;
-	max-width: 80%;
+	max-width: 92%;
 	margin: 0 auto 24px;
 	position: relative;
 }
