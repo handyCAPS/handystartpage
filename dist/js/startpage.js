@@ -1,4 +1,4 @@
-/*! handystartpage - v0.0.1 - 2014-02-27
+/*! handystartpage - v0.0.1 - 2014-02-28
 * Copyright (c) 2014 Tim Doppenberg; Licensed  */
 $(document).ready(function() {
 
@@ -28,7 +28,8 @@ $(document).ready(function() {
 		}
 
 		$('a').on('click', function(event) {
-				$.post('scripts/update-clicks.php?id=' + event.currentTarget.id, function() {
+			var linkId = event.currentTarget.id.replace(/[^0-9]*/,'');
+				$.post('scripts/update-clicks.php?id=' + linkId, function() {
 					window.location.reload();
 				});
 			});
@@ -53,7 +54,7 @@ $(document).ready(function() {
 		$('.delete-button').on('click', function() {
 			if(confirm('Sure ?')) {
 				$.post('scripts/delete-link.php?id=' + $(this).siblings('[name="id"]')[0].value , function() {
-					window.reload();
+					window.location.reload();
 					});
 				}
 			});
@@ -89,13 +90,13 @@ $(document).ready(function() {
 			$(imgId).remove();
 		});
 
-		$('#description').on('focusin', function() {
+		$('.desc').on('focusin', function() {
 			$(this).animate({
 				'height': '+=119px',
 				'width': '+=40px'
 			});
 		});
-		$('#description').on('focusout', function() {
+		$('.desc').on('focusout', function() {
 			$(this).animate({
 				'height': '-=119px',
 				'width': '-=40px'

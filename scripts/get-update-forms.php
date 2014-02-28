@@ -29,6 +29,8 @@ function update_list_forms($db,$cat) {
 					<input required type='text' value='$link_order' name='link_order' id='link_order_$idname' class='short'>
 					<label for='clicks'>clicks</label>
 					<input required type='text' value='$clicks' name='clicks' id='clicks_$idname' class='short'>
+					<label for='description'>Description</label>
+					<textarea name='description' id='description_$idname' class='desc'>$description</textarea>
 					<input type='submit' value='Update'>
 					<input type='button' value='Delete' class='delete-button'>
 					</fieldset>
