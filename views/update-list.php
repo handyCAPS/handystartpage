@@ -8,7 +8,7 @@ $category = $_REQUEST['category'];
 <a href="index.php">
 	<div id="home"></div>
 </a>
-<a href="#">
+<a href="scripts/clear-clicks.php?category=<?php echo $category; ?>" title='Reset clicks to 0'>
 	<div class="clear-clicks">Clear Clicks</div>
 </a>
 

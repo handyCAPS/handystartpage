@@ -15,21 +15,20 @@ function update_list_forms($db,$cat) {
 		$form_string .= "
 		<form method='POST' action='scripts/update-link.php' class='update-list-form'>
 			<fieldset>
-					<label for='id'>id</label>
-					<input type='text' value='$id' name='id' id='id_$idname' class='short' readonly>
+					<input type='hidden' value='$id' name='id' id='id_$idname'>
 					<label for='name'>name</label>
 					<input required type='text' value='$name' name='name' id='name_$idname' class='long'>
 					<label for='link'>link</label>
-					<input required type='text' value='$link' name='link' id='link_$idname' class=''>
-					<label for='image'>image</label>
+					<input required type='text' value='$link' name='link' id='link_$idname' class='long'>
+					<label for='image'>img</label>
 					<input required type='text' value='$image' name='image' id='image_$idname' class='long'>
-					<label for='cat_id'>category</label>
+					<label for='cat_id'>cat</label>
 					$categories
-					<label for='orderid'>link_order</label>
+					<label for='orderid'>order</label>
 					<input required type='text' value='$link_order' name='link_order' id='link_order_$idname' class='short'>
 					<label for='clicks'>clicks</label>
 					<input required type='text' value='$clicks' name='clicks' id='clicks_$idname' class='short'>
-					<label for='description'>Description</label>
+					<label for='description'>Desc</label>
 					<textarea name='description' id='description_$idname' class='desc'>$description</textarea>
 					<input type='submit' value='Update'>
 					<input type='button' value='Delete' class='delete-button'>

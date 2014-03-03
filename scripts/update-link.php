@@ -4,7 +4,7 @@ require_once 'db/connection.php';
 require_once 'query.php';
 
 foreach ($_POST as $key => $value) {
-	${$key} = $value;
+	${$key} = $db->real_escape_string($value);
 }
 // $link = urlencode($link);
 

@@ -1,5 +1,58 @@
-/*! handystartpage - v0.0.1 - 2014-02-28
+/*! handystartpage - v0.0.1 - 2014-03-02
 * Copyright (c) 2014 Tim Doppenberg; Licensed  */
+function timingOut(msecs) {
+	var dfd = new jQuery.Deferred();
+	setTimeout(function(){
+		dfd.resolve();
+	}, msecs);
+	return dfd.promise();
+}
+
+$.when(timingOut(800)).done(
+		function() {
+			var btn = $('.show-add-form'),
+			i = 0,
+			len = btn.length,
+			biggest = $(btn).offset().left,
+			titles =[];
+
+			btn.addClass('hovered');
+
+			for (;i < len; i++ ) {
+				// console.log(biggest);
+				var title = btn[i].title,
+				btnID = '#'+ btn[i].id,
+				titleID = '#af' + btn[i].id;
+
+				$('body').append('<div class="add-form-title" id="' + titleID.replace('#','') + '">' + title + '</div>');
+
+				var offleft = $(btnID).offset().left;
+
+				if (offleft > biggest) {
+					biggest = offleft;
+					lleft = offleft - ($(titleID).innerWidth() + 16);
+				} else {
+					lleft = offleft + 40;
+				}
+
+				$(titleID).css({
+					'top': $(btnID).offset().top - 8,
+					'left': lleft,
+					'opacity': 1
+				});
+
+				titles.push(titleID);
+			};
+
+			$.when(timingOut(1200)).done(function() {
+				btn.removeClass('hovered');
+			}).done(function() {
+				for(var i = 0; i < titles.length; i++) {
+					$(titles[i]).slideUp(1500);
+				}
+			});
+		}
+	);
 $(document).ready(function() {
 
 		var $container = $('#innerWrap');
@@ -34,6 +87,18 @@ $(document).ready(function() {
 				});
 			});
 
+		$('.show-add-form').css({
+			'top':  $('#bestof').innerHeight() + 1.5 * $('.show-add-form').outerHeight()
+		});
+
+		$('textarea.desc').on('focusin', function(event) {
+			if ($(this).html() === 'No Description Available') {
+				$(this).select();
+			} else {
+				event.currentTarget.selectionStart = $(this).html().length;
+			}
+		});
+
 		$('#showAddLinkForm').on('click', showAddLinkForm);
 
 		$('#showAddCatForm').on('click', showAddCatForm);
@@ -41,11 +106,11 @@ $(document).ready(function() {
 		$('.closexWrap').on('click', hideTheForm);
 
 		$('body').on('keypress', function(event) {
-			// Hotkey ALT + q
+			// Hotkey ALT + q to add a link
 			if (event.charCode === 113 && event.altKey === true) {
 				showAddLinkForm();
 			}
-			// Hotkey ALT + c
+			// Hotkey ALT + c to
 			else if (event.charCode === 99 && event.altKey === true) {
 				showAddCatForm();
 			}
@@ -58,6 +123,12 @@ $(document).ready(function() {
 					});
 				}
 			});
+
+		$('.clear-clicks').on('click', function(event) {
+			if(!confirm('Are you sure you want to reset all the clicks to 0 ?')) {
+				event.preventDefault();
+			}
+		});
 
 		$('input[name="image"]').on('mouseover focusout', function(event) {
 			var imgIdName = 'prev' + $(this).parent().context.id;

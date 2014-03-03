@@ -22,7 +22,7 @@ module.exports = function(grunt) {
         stripBanners: true
       },
       dist: {
-        src: ['lib/js/startpage.js'],
+        src: ['lib/js/**.js'],
         dest: 'dist/js/startpage.js'
       }
     },

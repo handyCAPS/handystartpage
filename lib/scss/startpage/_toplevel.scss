@@ -5,9 +5,9 @@
 }
 
 body {
-	background-image: url('../../img/dark_geometric.png');
-	background-color: #222;
+	background: url('../../img/dark_geometric.png') #222;
 	font-family: 'Open Sans', Arial, Verdana, sans-serif;
+	text-rendering: optimizeLegibility;
 }
 
 
@@ -15,10 +15,8 @@ body {
 	width: 96%;
 	margin: 0 auto;
 	position: relative;
-	padding-bottom: 24px;
+	padding: 12px 0px 24px;
 }
-
-
 
 h1 {
 	font-size: 24px;
