@@ -66,7 +66,8 @@ module.exports = function(grunt) {
       dev: {
         options: {
           lineNumbers: true,
-          debugInfo: true
+          debugInfo: true,
+          spawn: false
         },
         files: [{
           expand: true,

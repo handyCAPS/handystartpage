@@ -1,16 +1,18 @@
+
 .update-list-form {
 	text-align: center;
-}
-
-.update-list-form fieldset {
-	margin-bottom: 6px;
-	padding: 2px;
-	border: none;
+    fieldset {
+      margin-bottom: 6px;
+      padding: 2px;
+      border: none;
+    }
+    input[name="name"] {
+      border-radius: 3px;
+    }
 }
 
 #home, #home:before, #home:after {
   display: inline-block;
-  cursor: pointer;
   position: absolute;
 }
 
@@ -21,7 +23,6 @@
   top: 2em;
     &:after, &:before {
       content: '';
-      display: inline-block;
     }
     &:before {
       border: 18px solid transparent;

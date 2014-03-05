@@ -1,4 +1,4 @@
-/*! handystartpage - v0.0.1 - 2014-03-03
+/*! handystartpage - v0.0.1 - 2014-03-05
 * Copyright (c) 2014 Tim Doppenberg; Licensed  */
 function timingOut(msecs) {
 	// creating a new deffered object
@@ -57,10 +57,11 @@ $.when(timingOut(800)).done(
 		$.when(timingOut(1200)).done(function() {
 			// Unhover
 			btn.removeClass('hovered');
+			return this.done();
 		}).done(function() {
 			// Cleaning up the title divs
 			for(var i = 0; i < titles.length; i++) {
-				$(titles[i]).slideUp(1500);
+				$(titles[i]).fadeOut(1500);
 			}
 		});
 	}

@@ -1,5 +1,5 @@
 <div id="showAddLinkForm" title="Add a link" class="show-add-form"></div>
-<section class="form add-form" id='addLinkForm'>
+<section class="form add-form" id='addLinkForm' enctype="multipart/form-data">
 	<form action="scripts/add-link.php" method="POST">
 	<fieldset>
 		<legend>Add new Link</legend>
@@ -7,6 +7,7 @@
 		<input type="text" id="link" name="link" class="long" required>
 		<label for="image">Image</label>
 		<input type="text" id="image" name="image" class="medium" required>
+		<!-- <input type="file" id="image" name="image" class="medium"> -->
 		<label for="name">Name</label>
 		<input type="text" id="name" name="name" class="medium" required>
 		<label for="cat_id">Category</label>
