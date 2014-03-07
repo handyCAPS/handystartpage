@@ -698,7 +698,6 @@ img {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_add-form\.scss}line{font-family:\0000346}}
 .add-form {
-  display: none;
   max-width: 96%;
   margin: 0 auto 24px;
   position: relative; }

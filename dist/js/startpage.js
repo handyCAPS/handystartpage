@@ -1,4 +1,4 @@
-/*! handystartpage - v0.0.1 - 2014-03-05
+/*! handystartpage - v0.0.1 - 2014-03-06
 * Copyright (c) 2014 Tim Doppenberg; Licensed  */
 function timingOut(msecs) {
 	// creating a new deffered object
@@ -110,13 +110,25 @@ $(document).ready(function() {
 			'top':  $('#bestof').innerHeight() + 1.5 * $('.show-add-form').outerHeight()
 		});
 
-		$('textarea.desc').on('focusin', function(event) {
+		$('.desc').on('focusin', function(event) {
+			$(this).animate({
+				'height': '+=119px',
+				'width': '+=40px'
+			});
 			if ($(this).html() === 'No Description Available') {
 				$(this).select();
 			} else {
 				event.currentTarget.selectionStart = $(this).html().length;
 			}
 		});
+
+		$('.desc').on('focusout', function() {
+			$(this).animate({
+				'height': '-=119px',
+				'width': '-=40px'
+			});
+		});
+
 
 		$('#showAddLinkForm').on('click', showAddLinkForm);
 
@@ -180,16 +192,4 @@ $(document).ready(function() {
 			$(imgId).remove();
 		});
 
-		$('.desc').on('focusin', function() {
-			$(this).animate({
-				'height': '+=119px',
-				'width': '+=40px'
-			});
-		});
-		$('.desc').on('focusout', function() {
-			$(this).animate({
-				'height': '-=119px',
-				'width': '-=40px'
-			});
-		});
 	});

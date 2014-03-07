@@ -1,13 +1,13 @@
 <div id="showAddLinkForm" title="Add a link" class="show-add-form"></div>
-<section class="form add-form" id='addLinkForm' enctype="multipart/form-data">
-	<form action="scripts/add-link.php" method="POST">
+<section class="form add-form" id='addLinkForm'>
+	<form action="scripts/test-add-link.php" method="POST" enctype="multipart/form-data">
 	<fieldset>
 		<legend>Add new Link</legend>
 		<label for="link">Link</label>
 		<input type="text" id="link" name="link" class="long" required>
 		<label for="image">Image</label>
-		<input type="text" id="image" name="image" class="medium" required>
-		<!-- <input type="file" id="image" name="image" class="medium"> -->
+		<!-- <input type="text" id="image" name="image" class="medium" required> -->
+		<input type="file" id="image" name="image" class="medium">
 		<label for="name">Name</label>
 		<input type="text" id="name" name="name" class="medium" required>
 		<label for="cat_id">Category</label>
