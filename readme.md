@@ -45,6 +45,7 @@ Finally you need to give the link an order. This can be an integer (whole number
 
 - Refactor code. This will be ongoing.
 - Automate setting up the db
+- Collect all files needed to run the app in dist folder
 - Build a drag and drop ordering interface for the links and the categories
 - Add a range selector to select the number of links in the Best Of
 - Hook up all the js through require

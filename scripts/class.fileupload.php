@@ -18,6 +18,8 @@ Class File_Upload {
 
 	private $tmp_name;
 
+	private $filename;
+
 	private $destination;
 
 	const UPLOADS = "uploads";
@@ -51,11 +53,11 @@ Class File_Upload {
 				if (mkdir($dir_name,0777, true)) {
 					$this->get_upload_dir($dir_name);
 				} else {
-					$this->collect_errors('Couldn\'t make a new directory. ');
+					$this->collect_errors('Couldn\'t make a new directory.');
 				}
 
 			} else {
-				$this->collect_errors('Couldn\'t change to the root directory. ');
+				$this->collect_errors('Couldn\'t change to the root directory.');
 			}
 
 		}
@@ -70,14 +72,26 @@ Class File_Upload {
 		$length = (strpos(__FILE__, '\\', $first_slash) - $first_slash);
 
 		if (!$root_dir = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . substr(__FILE__, $start, $length) . DIRECTORY_SEPARATOR){
-			$this->collect_errors('Unable to get root path. ');
+			$this->collect_errors('Unable to get root path.');
 		}
 
-		return $root_dir;
+		return preg_replace('/\//', DIRECTORY_SEPARATOR, $root_dir);
+	}
+
+	private function get_full_path() {
+		return $this->upload_dir . $this->file_name;
+	}
+
+	private function get_rel_path() {
+		return $rel_path = $this->destination . DIRECTORY_SEPARATOR . $this->file_name;
 	}
 
 	public function file($file) {
 		$this->set_file_info($file);
+	}
+
+	private function set_file_name($filename) {
+		$this->file_name = $filename;
 	}
 
 	private function set_file_info($file) {
@@ -90,7 +104,7 @@ Class File_Upload {
 
 		} else {
 
-			$this->collect_errors('File array not in order. ');
+			$this->collect_errors('File array not in order.');
 
 		}
 	}
@@ -118,10 +132,10 @@ Class File_Upload {
 		if (!empty($this->allowed_mimes)) {
 
 			if (!in_array($file_mime, $this->allowed_mimes)) {
-						$this->collect_errors('Mime type not allowed. ');
+						$this->collect_errors('Mime type not allowed.');
 			}
 		} else {
-				$this->collect_errors('Allowed mime-types not set. ');
+				$this->collect_errors('Allowed mime-types not set.');
 			}
 	}
 
@@ -141,14 +155,14 @@ Class File_Upload {
 
 		} else {
 
-			$this->collect_errors('Maximum file size not set. ');
+			$this->collect_errors('Maximum file size not set.');
 
 		}
 	}
 
 	private function check_file_size($filesize) {
 		if (!($filesize <= $this->max_file_size)){
-			$this->collect_errors('File is too big. ');
+			$this->collect_errors('File is too big.');
 		}
 
 	}
@@ -169,9 +183,11 @@ Class File_Upload {
 
 		$filename = $this->file_data['name'];
 
-		$this->file_data['location'] = $this->upload_dir . $filename;
+		$this->file_data['location_abs'] = $this->get_full_path();
 
-		$status = move_uploaded_file($this->tmp_name, $this->file_data['location']);
+		$this->file_data['location_rel'] = $this->get_rel_path();
+
+		$status = move_uploaded_file($this->tmp_name, $this->file_data['location_abs']);
 		if (!$status) {
 			throw new Exception('Couldn\'t upload file');
 		}
@@ -212,11 +228,14 @@ Class File_Upload {
 	}
 
 	private function set_file_data() {
+
+		$this->set_file_name($this->file['name']);
+
 		$data = array(
 			'state' => FALSE,
 			'size' => $this->get_file_size(),
 			'mime' => $this->get_file_mime(),
-			'name' => $this->file['name'],
+			'name' => $this->file_name,
 			'post_data' => $this->file
 			);
 		$this->file_data = $data ;
@@ -254,7 +273,9 @@ Class Image_Upload {
 
 	private $location;
 
-	public function __construct($folder) {
+	const IMG_FOLDER = 'images';
+
+	public function __construct($folder = self::IMG_FOLDER) {
 
 		$this->set_default_mimes();
 
@@ -280,7 +301,7 @@ Class Image_Upload {
 
 		$this->default_mime_types = $defaults;
 	}
-
+	// Not needed ?
 	public function add_mime_type($type = array()) {
 
 		foreach ($type as $index => $mime_type) {
@@ -297,13 +318,10 @@ Class Image_Upload {
 	public function max_file_size($size) {
 		$this->img_upload->set_max_file_size($size);
 	}
-	// ??
-	public function get_folder() {
-		return $this->img_upload_dir;
-	}
 
 	public function upload($file) {
 		$this->img_upload->file($file);
+		return $this->save();
 	}
 
 	public function save() {
@@ -312,13 +330,13 @@ Class Image_Upload {
 
 			$data = $this->img_upload->get_file_data();
 
-			$this->location = $data['location'];
+			$this->location = $data['location_abs'];
 
 		}
 
 		$result = $this->img_upload->get_file_data();
 
-		return $result ;
+		return $result;
 	}
 
 	public function get_location() {
