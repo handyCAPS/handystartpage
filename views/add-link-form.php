@@ -1,6 +1,6 @@
 <div id="showAddLinkForm" title="Add a link" class="show-add-form"></div>
 <section class="form add-form" id='addLinkForm'>
-	<form action="scripts/test-add-link.php" method="POST" enctype="multipart/form-data">
+	<form action="scripts/add-link.php" method="POST" enctype="multipart/form-data">
 	<fieldset>
 		<legend>Add new Link</legend>
 		<label for="link">Link</label>
