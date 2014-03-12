@@ -83,7 +83,7 @@ Class File_Upload {
 	}
 
 	private function get_rel_path() {
-		return $rel_path = $this->destination . '/' . $this->file_name;
+		return $rel_path = $this->destination . '/';
 	}
 
 	public function file($file) {
@@ -92,6 +92,11 @@ Class File_Upload {
 
 	private function set_file_name($filename) {
 		$this->file_name = $filename;
+	}
+
+	private function get_unique_file_name() {
+		$unique = sha1(mt_rand(1, 9999) . $this->destination . uniqid());
+		$this->set_file_name($unique);
 	}
 
 	private function set_file_info($file) {
@@ -229,7 +234,7 @@ Class File_Upload {
 
 	private function set_file_data() {
 
-		$this->set_file_name($this->file['name']);
+		$this->get_unique_file_name();
 
 		$data = array(
 			'state' => FALSE,

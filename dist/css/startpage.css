@@ -1,4 +1,4 @@
-/*! normalize.css v3.0.0 | MIT License | git.io/normalize */
+/* normalize.css v3.0.0 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
  * 2. Prevent iOS text size adjust after orientation change, without disabling
@@ -350,7 +350,7 @@ input[type="search"]::-webkit-search-decoration {
  */
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\00003375}}
 fieldset {
-  border: 1px solid #c0c0c0;
+  border: 1px solid silver;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em; }
 
@@ -404,7 +404,7 @@ th {
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_toplevel\.scss}line{font-family:\000037}}
 body {
   background: url("../../img/dark_geometric.png") #222222;
-  font-family: 'Open Sans', Arial, Verdana, sans-serif;
+  font-family: "Open Sans", Arial, Verdana, sans-serif;
   text-rendering: optimizeLegibility; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_toplevel\.scss}line{font-family:\0000314}}
@@ -420,6 +420,11 @@ h1 {
   color: #CCC;
   text-align: center; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_toplevel\.scss}line{font-family:\0000327}}
+section {
+  width: 100%;
+  margin: 0 auto; }
+
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_forms\.scss}line{font-family:\000031}}
 legend {
   background-color: #CCC;
@@ -429,7 +434,7 @@ legend {
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_forms\.scss}line{font-family:\000037}}
 fieldset {
   padding: 16px;
-  border: 1px solid #AAA;
+  border: 1px solid #aaaaaa;
   border-radius: 3px; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_forms\.scss}line{font-family:\0000313}}
@@ -502,7 +507,7 @@ label {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_images\.scss}line{font-family:\000031}}
 img {
-  border-radius: 5px 5px / 3px 3px;
+  border-radius: 5px 5px/3px 3px;
   background-color: #FFF; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_images\.scss}line{font-family:\000037}}
@@ -520,7 +525,7 @@ img {
   width: 72px;
   height: 72px;
   margin: 8px;
-  border-radius: 5px 5px / 3px 3px; }
+  border-radius: 5px 5px/3px 3px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_description\.scss}line{font-family:\000039}}
   .container img {
     height: 72px;
@@ -570,20 +575,20 @@ img {
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_sub-sections\.scss}line{font-family:\000031}}
 .sub-sections {
   display: inline-block;
-  width: -webkit-calc(33.3333% - 24px);
-  width: calc(33.3333% - 24px);
+  width: -webkit-calc(33.3333% - 27.3333px);
+  width: calc(33.3333% - 27.3333px);
   vertical-align: top;
-  border: 1px solid #fff;
+  border: 1px solid white;
   border-radius: 3px;
   margin: 12px;
   margin-bottom: 24px;
-  padding: 4px 12px 0px;
+  padding: 16px 0px;
   position: relative;
   text-align: center; }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_sub-sections\.scss}line{font-family:\0000312}}
   .sub-sections h2 {
     display: inline-block;
-    font-family: 'Open Sans',Verdana, Arial sans-serif;
+    font-family: "Open Sans", Verdana, Arial sans-serif;
     font-weight: 100;
     color: #A5C5EB;
     background-image: url("../../img/dark_geometric.png");
@@ -593,7 +598,7 @@ img {
     left: 5px;
     padding: 0 5px;
     margin: 0;
-    text-shadow: 1px 1px 1px #222; }
+    text-shadow: 1px 1px 1px #222222; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_sub-sections\.scss}line{font-family:\0000328}}
 #bestof {
@@ -601,11 +606,11 @@ img {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_sub-sections\.scss}line{font-family:\0000332}}
 .wide {
-  width: 98%;
-  margin-bottom: 24px;
-  margin-top: 1em; }
+  width: -webkit-calc(100% - 24px);
+  width: calc(100% - 24px);
+  margin: 1em auto 24px 12px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_sub-sections\.scss}line{font-family:\0000338}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_sub-sections\.scss}line{font-family:\0000337}}
 .edit-button {
   display: inline-block;
   opacity: 0;
@@ -619,7 +624,7 @@ img {
   -webkit-transition: all 0.3s ease 0.5s;
   transition: all 0.3s ease 0.5s; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_sub-sections\.scss}line{font-family:\0000350}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_sub-sections\.scss}line{font-family:\0000349}}
 .edit-button:after {
   content: '';
   display: inline-block;
@@ -632,16 +637,16 @@ img {
   -webkit-transition: all 0.3s ease 0.5s;
   transition: all 0.3s ease 0.5s; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_sub-sections\.scss}line{font-family:\0000361}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_sub-sections\.scss}line{font-family:\0000360}}
 .edit-button:hover {
-  -webkit-box-shadow: 0 0 15px #F5F;
-  box-shadow: 0 0 15px #F5F; }
+  -webkit-box-shadow: 0 0 15px #ff55ff;
+  box-shadow: 0 0 15px #ff55ff; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_sub-sections\.scss}line{font-family:\0000367}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_sub-sections\.scss}line{font-family:\0000366}}
 .sub-sections:hover .edit-button, .sub-sections:hover .edit-button:after {
   opacity: 1; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_sub-sections\.scss}line{font-family:\0000372}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_sub-sections\.scss}line{font-family:\0000371}}
 .sub-sections:hover .edit-button {
   -webkit-transform: rotate(405deg);
   -ms-transform: rotate(405deg);
@@ -691,8 +696,8 @@ img {
     -webkit-transform: rotate(-360deg) scale(1.3);
     -ms-transform: rotate(-360deg) scale(1.3);
     transform: rotate(-360deg) scale(1.3);
-    -webkit-box-shadow: 0 0 10px #F0F;
-    box-shadow: 0 0 10px #F0F;
+    -webkit-box-shadow: 0 0 10px magenta;
+    box-shadow: 0 0 10px magenta;
     -webkit-transition: 0.6s ease;
     transition: 0.6s ease; }
 
@@ -742,8 +747,8 @@ img {
   transition: all 0.6s ease-in-out; }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_add-form\.scss}line{font-family:\0000386}}
   #listCat:hover, #listCat .hovered {
-    -webkit-box-shadow: 0 0 18px 4px #F0F;
-    box-shadow: 0 0 18px 4px #F0F;
+    -webkit-box-shadow: 0 0 18px 4px magenta;
+    box-shadow: 0 0 18px 4px magenta;
     -webkit-transform: scale(1.2) translateZ(0);
     -ms-transform: scale(1.2) translateZ(0);
     transform: scale(1.2) translateZ(0); }
@@ -788,8 +793,8 @@ img {
     border-radius: 2px 2px 0 0;
     bottom: 0;
     left: 50%;
-    -webkit-box-shadow: inset 0 2px 3px #000;
-    box-shadow: inset 0 2px 3px #000; }
+    -webkit-box-shadow: inset 0 2px 3px black;
+    box-shadow: inset 0 2px 3px black; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_update-form\.scss}line{font-family:\0000344}}
 .clear-clicks {
@@ -845,7 +850,7 @@ img {
   content: "";
   position: absolute;
   background: #F20000;
-  border: 1px solid #000; }
+  border: 1px solid black; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_closex\.scss}line{font-family:\0000318}}
 .closex:before {
@@ -867,21 +872,21 @@ img {
 .closexWrap {
   display: inline-block;
   cursor: pointer;
-  border: 1px solid #000;
+  border: 1px solid black;
   border-radius: 50%;
   background-color: #CCC;
   position: absolute;
   top: 2px;
   right: -6px;
-  -webkit-box-shadow: 0 0 0 2px #FFF;
-  box-shadow: 0 0 0 2px #FFF;
+  -webkit-box-shadow: 0 0 0 2px white;
+  box-shadow: 0 0 0 2px white;
   -webkit-transition: all 1.3s ease;
   transition: all 1.3s ease; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_closex\.scss}line{font-family:\0000346}}
 .closexWrap:hover {
-  -webkit-box-shadow: 0 0 0 2px #FFF,0 0 10px 2px #F0F;
-  box-shadow: 0 0 0 2px #FFF,0 0 10px 2px #F0F;
+  -webkit-box-shadow: 0 0 0 2px white, 0 0 10px 2px magenta;
+  box-shadow: 0 0 0 2px white, 0 0 10px 2px magenta;
   -webkit-transform: rotate(360deg);
   -ms-transform: rotate(360deg);
   transform: rotate(360deg); }
@@ -928,8 +933,8 @@ img {
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_helpers\.scss}line{font-family:\0000333}}
   .delete-button:hover {
     background-color: #F00;
-    -webkit-box-shadow: 0px 0px 5px #F0A;
-    box-shadow: 0px 0px 5px #F0A;
+    -webkit-box-shadow: 0px 0px 5px #ff00aa;
+    box-shadow: 0px 0px 5px #ff00aa;
     -webkit-transform: rotate(360deg) scale(1);
     -ms-transform: rotate(360deg) scale(1);
     transform: rotate(360deg) scale(1); }

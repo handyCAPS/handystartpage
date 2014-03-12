@@ -25,9 +25,9 @@ function get_the_links($db, $full_array, $server_img_array, $cat_id) {
 			. $assoc['name']
 			. " ["
 			. $assoc['link_order']
-			. "]'><div class='description'><p>"
+			. "]'><div class='description'>"
 			. $assoc['description']
-			. "</p></div></div></a></div>" ;
+			. "</div></div></a></div>" ;
 			array_push($link_array, $link);
 		}
 	}
@@ -39,15 +39,18 @@ function get_the_links($db, $full_array, $server_img_array, $cat_id) {
 			. $assoc['id']
 			. "'><div class='flipper'><img src='"
 			. $assoc['img_location']
+			. $assoc['img_name']
+			. "."
+			. $assoc['img_mime']
 			. "' alt='"
 			. $assoc['name']
 			. "' title='"
 			. $assoc['name']
 			. " ["
 			. $assoc['link_order']
-			. "]'><div class='description'><p>"
+			. "]'><div class='description'>"
 			. $assoc['description']
-			. "</p></div></div></a></div>" ;
+			. "</div></div></a></div>" ;
 			array_push($link_array, $link);
 		}
 	}
@@ -82,13 +85,13 @@ function get_the_sub_sections($db, $cat_array, $all_the_links) {
 		. $cat_array[$i]['cat_id']
 		. "'></div></a><h2>"
 		. $cat_array[$i]['cat_name']
-		. "</h2><p>";
+		. "</h2>";
 		foreach ($all_the_links as $key => $value) {
 			if ($key === $i) {
 				$sub_section .= implode("", $value);
 			}
 		}
-		$sub_section .= "</p></div>";
+		$sub_section .= "</div>";
 		$subsec_string .= $sub_section;
 	}
 	return $subsec_string;
