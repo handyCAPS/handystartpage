@@ -577,7 +577,7 @@ img {
   border-radius: 3px;
   margin: 12px;
   margin-bottom: 24px;
-  padding: 4px 12px;
+  padding: 4px 12px 0px;
   position: relative;
   text-align: center; }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_sub-sections\.scss}line{font-family:\0000312}}
@@ -698,6 +698,7 @@ img {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_add-form\.scss}line{font-family:\0000346}}
 .add-form {
+  display: none;
   max-width: 96%;
   margin: 0 auto 24px;
   position: relative; }

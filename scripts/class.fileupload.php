@@ -32,7 +32,7 @@ Class File_Upload {
 
 		$this->root_dir = self::get_root_path();
 
-		$this->destination = self::UPLOADS . DIRECTORY_SEPARATOR . $folder;
+		$this->destination = self::UPLOADS . '/' . $folder;
 
 		if (!$this->upload_dir = $this->get_upload_dir($this->destination)) {
 			throw new Exception('Unable to find or create upload folder');
@@ -46,7 +46,7 @@ Class File_Upload {
 
 		$uploaddir = FALSE;
 
-		if (!is_writable($uploaddir = $this->root_dir . $dir_name . DIRECTORY_SEPARATOR)){
+		if (!is_writable($uploaddir = $this->root_dir . $dir_name . '/')){
 
 			if (chdir($this->root_dir)) {
 
@@ -71,11 +71,11 @@ Class File_Upload {
 
 		$length = (strpos(__FILE__, '\\', $first_slash) - $first_slash);
 
-		if (!$root_dir = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . substr(__FILE__, $start, $length) . DIRECTORY_SEPARATOR){
+		if (!$root_dir = $_SERVER['DOCUMENT_ROOT'] . '/' . substr(__FILE__, $start, $length) . '/'){
 			$this->collect_errors('Unable to get root path.');
 		}
 
-		return preg_replace('/\//', DIRECTORY_SEPARATOR, $root_dir);
+		return $root_dir;
 	}
 
 	private function get_full_path() {
@@ -83,7 +83,7 @@ Class File_Upload {
 	}
 
 	private function get_rel_path() {
-		return $rel_path = $this->destination . DIRECTORY_SEPARATOR . $this->file_name;
+		return $rel_path = $this->destination . '/' . $this->file_name;
 	}
 
 	public function file($file) {

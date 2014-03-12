@@ -50,6 +50,7 @@ module.exports = function(grunt) {
         boss: true,
         eqnull: true,
         browser: true,
+        jquery: true,
         globals: {
           jQuery: true,
           require: true
@@ -59,7 +60,7 @@ module.exports = function(grunt) {
         src: 'Gruntfile.js'
       },
       lib_test: {
-        src: ['lib/startpage.js']
+        src: ['lib/js/**/*.js']
       }
     },
     sass: {
@@ -140,7 +141,7 @@ module.exports = function(grunt) {
       },
       js: {
         files: ['lib/**/*.js'],
-        tasks: ['concat', 'uglify']
+        tasks: ['jshint', 'concat', 'uglify']
       },
       php: {
         files: ['**/*.php'],
