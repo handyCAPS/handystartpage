@@ -1,4 +1,4 @@
-/*! handystartpage - v0.0.1 - 2014-03-11
+/*! handystartpage - v0.0.1 - 2014-03-12
 * Copyright (c) 2014 Tim Doppenberg; Licensed  */
 function timingOut(msecs) {
 	// creating a new deffered object
@@ -37,10 +37,11 @@ function hoverButtonsOnload() {
 		// Timer is done, let's do some cool stuff
 		function() {
 			// Setting a counter to stop this from happening too much
-			var counter = "TwoManyLoads=";
+			var counter = "howManyLoads=";
 			var howManyLoads = getCookieValue(counter) || 0;
+			// console.log(document.cookie);
 			howManyLoads++;
-			document.cookie = counter + howManyLoads;
+			document.cookie = counter + howManyLoads + ";max-age=60";
 			if (howManyLoads > 5) {
 				return this.fail();
 			}
