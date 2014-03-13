@@ -17,6 +17,10 @@ function add_link_to_db($db, $upload_class) {
 	$link_order = $db->real_escape_string(trim($_POST['link_order']));
 	$description = $db->real_escape_string(trim($_POST['description']));
 
+	if ($description === '') {
+		$description = 'No description available';
+	}
+
 	if ($uploaded['state']) {
 
 		$img_name = $uploaded['name'];
@@ -26,7 +30,7 @@ function add_link_to_db($db, $upload_class) {
 
 		$insert = add_to_the_db($db, 'images', "img_name, img_mime, img_location","'$img_name', '$img_mime', '$img_loc'");
 
-		if (!is_array($insert)) {
+		if ($insert !== TRUE) {
 
 			if (DEBUG) {
 				var_dump($img_name);
