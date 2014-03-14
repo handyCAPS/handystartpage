@@ -22,9 +22,9 @@ function get_bestof($db, $n = 13) {
 		. $array['name']
 		. " ["
 		. $array['clicks']
-		. "]'><div class='description'>"
+		. "]'><div class='description'><p>"
 		. $array['description']
-		. "</div></div></a></div>";
+		. "</p></div></div></a></div>";
 		$bestof_string .= $link;
 	}
 	return $bestof_string;

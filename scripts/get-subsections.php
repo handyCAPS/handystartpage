@@ -28,9 +28,9 @@ function get_the_links($db, $full_array, $server_img_array, $cat_id) {
 				. $assoc['name']
 				. " ["
 				. $assoc['link_order']
-				. "]'><div class='description'>"
+				. "]'><div class='description'><p>"
 				. $assoc['description']
-				. "</div></div></a></div>" ;
+				. "</p></div></div></a></div>" ;
 				array_push($link_array, $link);
 			}
 		}
@@ -52,9 +52,9 @@ function get_the_links($db, $full_array, $server_img_array, $cat_id) {
 				. $assoc['name']
 				. " ["
 				. $assoc['link_order']
-				. "]'><div class='description'>"
+				. "]'><div class='description'><p>"
 				. $assoc['description']
-				. "</div></div></a></div>" ;
+				. "</p></div></div></a></div>" ;
 				array_push($link_array, $link);
 			}
 		}

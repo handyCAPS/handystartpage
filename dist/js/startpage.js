@@ -1,4 +1,4 @@
-/*! handystartpage - v0.0.1 - 2014-03-12
+/*! handystartpage - v0.0.1 - 2014-03-13
 * Copyright (c) 2014 Tim Doppenberg; Licensed  */
 function timingOut(msecs) {
 	// creating a new deffered object
@@ -9,6 +9,55 @@ function timingOut(msecs) {
 	}, msecs);
 	return dfd.promise();
 }
+
+function placeRangeWrap() {
+	$('.range_wrap').css({
+		'top': $('#bestof').outerHeight(),
+		'right': 0
+			});
+}
+
+function showRangeSelector() {
+
+	placeRangeWrap();
+
+	$.when(timingOut(5000)).done(function() {
+
+		var range = $('#bestOfRange'),
+			rangeDisplay = $('.range_display'),
+			rangeWrap = $('.range_wrap');
+
+		range.show('slow');
+
+		rangeDisplay.html(range.val());
+
+		rangeDisplay.animate({
+			'opacity': 1
+		});
+
+		range.on('input', function() {
+			rangeDisplay.html($(this).val());
+		});
+
+		range.on('mouseup', function() {
+			$.when(timingOut(1000)).done(function() {
+				rangeWrap.addClass('tiny');
+				rangeWrap.css({
+					'top': '-8px',
+					'right': '-80px'
+				});
+			});
+		});
+
+		range.on('mouseover', function() {
+			$('.tiny').removeClass('tiny');
+			placeRangeWrap();
+		});
+
+	});
+
+}
+
 function checkCookie(name) {
 
 	var reg = new RegExp(name);
@@ -36,6 +85,7 @@ function hoverButtonsOnload() {
 	$.when(timingOut(800)).done(
 		// Timer is done, let's do some cool stuff
 		function() {
+
 			// Setting a counter to stop this from happening too much
 			var counter = "howManyLoads=";
 			var howManyLoads = getCookieValue(counter) || 0;
@@ -43,11 +93,11 @@ function hoverButtonsOnload() {
 			howManyLoads++;
 			document.cookie = counter + howManyLoads + ";max-age=60";
 			if (howManyLoads > 5) {
-				return this.fail();
+				return this.done();
 			}
 			// If we're not on the frontpage, none of this should be happening
 			if (window.location.search !== '') {
-				return this.fail();
+				return this.done();
 			}
 			// Grabbing the add-form buttons
 			var btn = $('.show-add-form'),
@@ -100,7 +150,13 @@ function hoverButtonsOnload() {
 	);
 }
 
-$(document).ready(hoverButtonsOnload());
+$(document).ready(function () {
+	hoverButtonsOnload();
+	showRangeSelector();
+	$(window).on('resize', function() {
+		placeRangeWrap();
+	});
+});
 $(document).ready(function() {
 
 		var $container = $('#innerWrap');
