@@ -1,4 +1,4 @@
-/*! handystartpage - v0.0.1 - 2014-03-13
+/*! handystartpage - v0.0.1 - 2014-03-14
 * Copyright (c) 2014 Tim Doppenberg; Licensed  */
 function timingOut(msecs) {
 	// creating a new deffered object
@@ -40,6 +40,7 @@ function showRangeSelector() {
 		});
 
 		range.on('mouseup', function() {
+			$('#bestOfWrap').load('scripts/update-bestof.php', {'bestOfRange': range.val()});
 			$.when(timingOut(1000)).done(function() {
 				rangeWrap.addClass('tiny');
 				rangeWrap.css({
