@@ -22,8 +22,9 @@ module.exports = function(grunt) {
         stripBanners: true
       },
       dist: {
-        src: ['lib/js/**.js'],
-        dest: 'dist/js/startpage.js'
+        files: {
+          'dist/js/startpage.js' : ['lib/js/events.js', 'lib/js/promises.js', 'lib/js/startpage.js']
+        }
       }
     },
     uglify: {
@@ -31,7 +32,7 @@ module.exports = function(grunt) {
         banner: '<%= banner %>'
       },
       dist: {
-        src: '<%= concat.dist.dest %>',
+        src: 'dist/js/startpage.js',
         dest: 'dist/js/startpage.min.js'
       }
     },
@@ -59,8 +60,8 @@ module.exports = function(grunt) {
       gruntfile: {
         src: 'Gruntfile.js'
       },
-      lib_test: {
-        src: ['lib/js/**/*.js']
+      libTest: {
+        src: 'dist/js/startpage.js'
       }
     },
     sass: {
@@ -130,18 +131,29 @@ module.exports = function(grunt) {
         }]
       }
     },
+    copy: {
+      viewsNscripts: {
+        src: ['views/*','scripts/*'],
+        dest: 'dist/',
+        options: {
+          process: function(content) {
+            return content.replace(/dist\//g, '' );
+          }
+        }
+      },
+      index: {
+        src: 'index.php',
+        dest: 'dist/'
+      }
+    },
     watch: {
       gruntfile: {
         files: '<%= jshint.gruntfile.src %>',
         tasks: ['jshint:gruntfile']
       },
-      lib_test: {
-        files: '<%= jshint.lib_test.src %>',
-        tasks: ['jshint:lib_test']
-      },
       js: {
         files: ['lib/**/*.js'],
-        tasks: ['jshint', 'concat', 'uglify']
+        tasks: ['concat', 'jshint:libTest', 'uglify']
       },
       php: {
         files: ['**/*.php'],
@@ -161,6 +173,6 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'concat', 'uglify']);
+  grunt.registerTask('default', ['sass', 'autoprefixer', 'jshint', 'concat', 'uglify', 'copy']);
 
 };

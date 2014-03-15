@@ -9,7 +9,6 @@
 	<div class="range_wrap">
 		<div class="range_display">13</div>
 		<input type="range" min='10' max='36' value="13" name='bestOfRange' id='bestOfRange' title='Select number of bestofs. From 10 to 36'>
-		<div class='close'></div>
 	</div><!--  end .range_wrap  -->
 	<div id='bestOfWrap'>
 		<?php

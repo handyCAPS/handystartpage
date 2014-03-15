@@ -420,11 +420,6 @@ h1 {
   color: #CCC;
   text-align: center; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_toplevel\.scss}line{font-family:\0000327}}
-section {
-  width: 100%;
-  margin: 0 auto; }
-
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_forms\.scss}line{font-family:\000031}}
 legend {
   background-color: #CCC;
@@ -570,8 +565,7 @@ img {
   transition: all 0.3s 1.35s; }
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_description\.scss}line{font-family:\0000341}}
   .description p {
-    padding: 4px;
-    margin: 0; }
+    padding: 0px 4px; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_sub-sections\.scss}line{font-family:\000031}}
 .sub-sections {
@@ -625,7 +619,7 @@ img {
   -webkit-transition: all 0.3s ease 0.5s;
   transition: all 0.3s ease 0.5s; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_sub-sections\.scss}line{font-family:\0000349}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_sub-sections\.scss}line{font-family:\0000350}}
 .edit-button:after {
   content: '';
   display: inline-block;
@@ -638,7 +632,7 @@ img {
   -webkit-transition: all 0.3s ease 0.5s;
   transition: all 0.3s ease 0.5s; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_sub-sections\.scss}line{font-family:\0000360}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_sub-sections\.scss}line{font-family:\0000362}}
 .edit-button:hover {
   -webkit-box-shadow: 0 0 15px #F5F;
   box-shadow: 0 0 15px #F5F; }
@@ -753,34 +747,6 @@ img {
     -webkit-transform: scale(1.2) translateZ(0);
     -ms-transform: scale(1.2) translateZ(0);
     transform: scale(1.2) translateZ(0); }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_range\.scss}line{font-family:\000031}}
-input[type="range"] {
-  cursor: pointer; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_range\.scss}line{font-family:\000035}}
-#bestOfRange {
-  display: none; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_range\.scss}line{font-family:\000039}}
-.range_wrap {
-  display: inline-block;
-  position: absolute;
-  top: 108px;
-  right: 0;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
-  z-index: 10; }
-
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_range\.scss}line{font-family:\0000318}}
-.range_display {
-  display: inline-block;
-  position: relative;
-  background-color: #CCC;
-  padding: 2px 4px;
-  margin-top: 4px;
-  border-radius: 3px;
-  opacity: 0; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_update-form\.scss}line{font-family:\000032}}
 .update-list-form {
@@ -920,6 +886,34 @@ input[type="range"] {
   -ms-transform: rotate(360deg);
   transform: rotate(360deg); }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_range\.scss}line{font-family:\000031}}
+input[type="range"] {
+  cursor: pointer; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_range\.scss}line{font-family:\000035}}
+#bestOfRange {
+  display: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_range\.scss}line{font-family:\000039}}
+.range_wrap {
+  display: inline-block;
+  position: absolute;
+  top: 108px;
+  right: 0;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  z-index: 10; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_range\.scss}line{font-family:\0000318}}
+.range_display {
+  display: inline-block;
+  position: relative;
+  background-color: #CCC;
+  padding: 2px 4px;
+  margin-top: 4px;
+  border-radius: 3px;
+  opacity: 0; }
+
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_helpers\.scss}line{font-family:\000031}}
 .delete-button {
   font-size: 0.1px;
@@ -973,3 +967,41 @@ input[type="range"] {
   -webkit-transform: scale(0.2);
   -ms-transform: scale(0.2);
   transform: scale(0.2); }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_helpers\.scss}line{font-family:\0000344}}
+.close {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #CCC;
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+  top: -8px;
+  left: -12px;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  -webkit-box-shadow: 0 0 6px #F0F;
+  box-shadow: 0 0 6px #F0F; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_helpers\.scss}line{font-family:\0000357}}
+  .close:before, .close:after {
+    position: absolute;
+    display: inline-block;
+    content: '';
+    background-color: #222;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg); }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_helpers\.scss}line{font-family:\0000364}}
+  .close:before {
+    width: 2px;
+    height: 8px;
+    left: 5px;
+    top: 2px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_helpers\.scss}line{font-family:\0000370}}
+  .close:after {
+    width: 8px;
+    height: 2px;
+    top: 5px;
+    left: 2px; }

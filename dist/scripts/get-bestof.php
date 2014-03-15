@@ -40,7 +40,7 @@ function get_bestof($db) {
 			. $array['link']
 			. "' target='_blank' id='best"
 			. $array['id']
-			. "'><div class='flipper'><img src='dist/images/"
+			. "'><div class='flipper'><img src='images/"
 			. $array['image']
 			. "' alt='"
 			. $array['name']

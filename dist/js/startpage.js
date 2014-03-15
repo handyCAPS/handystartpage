@@ -1,5 +1,176 @@
-/*! handystartpage - v0.0.1 - 2014-03-14
+/*! handystartpage - v0.0.1 - 2014-03-15
 * Copyright (c) 2014 Tim Doppenberg; Licensed  */
+
+function hideTheForm() {
+	var parent = $(this).parents('section'),
+	parentId = parent[0].id,
+	buttonToShow = '#show' + parentId[0].toUpperCase() + parentId.substr(1);
+	parent.fadeOut('fast');
+	$(buttonToShow).fadeIn('slow');
+}
+
+function showAddLinkForm() {
+	$('#addLinkForm').fadeIn('slow');
+	$('#showAddLinkForm').fadeOut('fast');
+	$('#addLinkForm form input:first-of-type').focus();
+}
+
+function showAddCatForm() {
+	$('#addCatForm').fadeIn('slow');
+	$('#showAddCatForm').fadeOut('fast');
+	$('#addCatForm form input:first-of-type').focus();
+}
+
+function alignThePlusses() {
+	$('.show-add-form').css({
+		'top':  $('#bestof').innerHeight() + 1.5 * $('.show-add-form').outerHeight()
+	});
+}
+
+function placeRangeWrap() {
+	$('.range_wrap').css({
+		'top': $('#bestof').outerHeight(),
+		'right': 0
+			});
+}
+
+function placeTinyRangeWrap() {
+	$('.range_wrap').css({
+		'top': '-8px',
+		'right': '-80px'
+	});
+}
+
+$(window).on('resize', function() {
+	alignThePlusses();
+});
+
+$('.desc').on('focusin', function(event) {
+	$(this).animate({
+		'height': '+=119px',
+		'width': '+=40px'
+	});
+	if ($(this).html() === 'No Description Available') {
+		$(this).select();
+	} else {
+		event.currentTarget.selectionStart = $(this).html().length;
+	}
+});
+
+$('.desc').on('focusout', function() {
+	$(this).animate({
+		'height': '-=119px',
+		'width': '-=40px'
+	});
+});
+
+
+$('#showAddLinkForm').on('click', showAddLinkForm);
+
+$('#showAddCatForm').on('click', showAddCatForm);
+
+$('.closexWrap').on('click', hideTheForm);
+
+$('body').on('keypress', function(event) {
+	// Hotkey ALT + q to add a link
+	if (event.charCode === 113 && event.altKey === true) {
+		showAddLinkForm();
+	}
+	// Hotkey ALT + c to
+	else if (event.charCode === 99 && event.altKey === true) {
+		showAddCatForm();
+	}
+});
+
+$('.delete-button').on('click', function() {
+	if(confirm('Sure ?')) {
+		$.post('scripts/delete-link.php?id=' + $(this).siblings('[name="id"]')[0].value , function() {
+			window.location.reload();
+			});
+		}
+	});
+
+$('.clear-clicks').on('click', function(event) {
+	if(!confirm('Are you sure you want to reset all the clicks to 0 ?')) {
+		event.preventDefault();
+	}
+});
+
+$('input[name="image"]').on('mouseover focusout', function(event) {
+
+	var imgIdName = 'prev' + $(this).parent().context.id,
+			previewImage = "<div class='preview-image' id='" + imgIdName + "'><img src='dist/images/" + $(this)[0].value + "' alt=''></div>",
+			imgId = '#' + imgIdName;
+
+	function showThePreview(preImg, imageId) {
+		var update = window.location.search.match("update");
+		if (typeof window.$('.preview-image')[0] === 'undefined') {
+			$('body').append(preImg);
+			if (event.type === "mouseover") {
+				$(imageId).css({
+					"top": event.pageY - 60,
+					"left": event.pageX + 24});
+				} else if (event.type === "focusout" && !update) {
+						$(imageId).css({
+							"top": 208,
+							"right": 12
+						});
+				}
+		} else {
+			$('.preview-image').remove();
+			showThePreview(preImg,imgId);
+		}
+	}
+
+	showThePreview(previewImage,imgId);
+});
+
+$('input[name="image"]').on('mouseout focusin', function() {
+	var imgId = '#prev' + $(this).parent().context.id;
+	$(imgId).remove();
+});
+
+function listenForClicks() {
+	$('a').on('click', function(event) {
+		var linkId = event.currentTarget.id.replace(/[^0-9]*/,'');
+			$.post('scripts/update-clicks.php?id=' + linkId, function() {
+				window.location.reload();
+			});
+	});
+}
+
+function get_the_file() {
+	$('#image').on('focusout', function() {
+		var testdiv = "<div class='testdiv'></div>";
+		$('body').append(testdiv);
+		$('.testdiv').css({
+			'display': 'inline-block',
+			'background-color': '#CCC',
+			'position': 'absolute',
+			'top': 20
+		});
+
+		var formData = new FormData();
+
+		formData.append('image', $('#image')[0].files[0]);
+
+		$.ajax({
+			url: "scripts/upload-image.php",
+			type: "POST",
+			data: formData,
+			contentType: false,
+			processData: false,
+			success: function(response) {
+				$('.testdiv').html(response);
+			}
+
+		});
+
+	});
+}
+
+get_the_file();
+
 function timingOut(msecs) {
 	// creating a new deffered object
 	var dfd = new jQuery.Deferred();
@@ -10,18 +181,11 @@ function timingOut(msecs) {
 	return dfd.promise();
 }
 
-function placeRangeWrap() {
-	$('.range_wrap').css({
-		'top': $('#bestof').outerHeight(),
-		'right': 0
-			});
-}
-
-function showRangeSelector() {
+function showRangeSelector(after) {
 
 	placeRangeWrap();
 
-	$.when(timingOut(5000)).done(function() {
+	$.when(timingOut(after)).done(function() {
 
 		var range = $('#bestOfRange'),
 			rangeDisplay = $('.range_display'),
@@ -29,29 +193,51 @@ function showRangeSelector() {
 
 		range.show('slow');
 
-		rangeDisplay.html(range.val());
-
 		rangeDisplay.animate({
 			'opacity': 1
+		});
+
+		$('.close').css({
+			'opacity': 1
+		});
+
+		rangeWrap.addClass('range_label');
+
+		rangeDisplay.html(range.val());
+
+		$.when(timingOut(2000)).done(function() {
+
+			rangeWrap.addClass('tiny');
+
+			rangeWrap.removeClass('range_label');
+
+			placeTinyRangeWrap();
+
 		});
 
 		range.on('input', function() {
 			rangeDisplay.html($(this).val());
 		});
 
-		range.on('mouseup', function() {
-			$('#bestOfWrap').load('scripts/update-bestof.php', {'bestOfRange': range.val()});
-			$.when(timingOut(1000)).done(function() {
-				rangeWrap.addClass('tiny');
-				rangeWrap.css({
-					'top': '-8px',
-					'right': '-80px'
-				});
+		$('.range_wrap .close').on('click', function() {
+			rangeWrap.addClass('tiny');
+			placeTinyRangeWrap();
+			alignThePlusses();
+		});
+
+		range.on('change', function() {
+
+			$('#bestOfWrap').load('scripts/update-bestof.php', {'bestOfRange': range.val()}, function() {
+				listenForClicks();
+				placeRangeWrap();
+				alignThePlusses();
 			});
+
 		});
 
 		range.on('mouseover', function() {
 			$('.tiny').removeClass('tiny');
+			range.addClass('range_label');
 			placeRangeWrap();
 		});
 
@@ -82,7 +268,8 @@ function getCookieValue(name) {
 }
 
 
-function hoverButtonsOnload() {
+function hoverButtonsOnLoad() {
+
 	$.when(timingOut(800)).done(
 		// Timer is done, let's do some cool stuff
 		function() {
@@ -90,16 +277,15 @@ function hoverButtonsOnload() {
 			// Setting a counter to stop this from happening too much
 			var counter = "howManyLoads=";
 			var howManyLoads = getCookieValue(counter) || 0;
-			// console.log(document.cookie);
 			howManyLoads++;
 			document.cookie = counter + howManyLoads + ";max-age=60";
-			if (howManyLoads > 5) {
-				return this.done();
-			}
+
 			// If we're not on the frontpage, none of this should be happening
-			if (window.location.search !== '') {
-				return this.done();
+			if (howManyLoads > 5 || window.location.search !== '') {
+				showRangeSelector(500);
+				return this.fail();
 			}
+
 			// Grabbing the add-form buttons
 			var btn = $('.show-add-form'),
 			i = 0,
@@ -140,148 +326,29 @@ function hoverButtonsOnload() {
 			$.when(timingOut(1200)).done(function() {
 				// Unhover
 				btn.removeClass('hovered');
-				return this.done();
-			}).done(function() {
 				// Cleaning up the title divs
 				for(var i = 0; i < titles.length; i++) {
 					$(titles[i]).fadeOut(2800);
 				}
 			});
+
 		}
 	);
 }
 
-$(document).ready(function () {
-	hoverButtonsOnload();
-	showRangeSelector();
-	$(window).on('resize', function() {
-		placeRangeWrap();
-	});
-});
 $(document).ready(function() {
 
-		var $container = $('#innerWrap');
-		$container.masonry({
-			itemSelector: '.sub-sections'
-		});
-
-		function hideTheForm() {
-			var parent = $(this).parents('section'),
-			parentId = parent[0].id,
-			buttonToShow = '#show' + parentId[0].toUpperCase() + parentId.substr(1);
-			parent.fadeOut('fast');
-			$(buttonToShow).fadeIn('slow');
-		}
-
-		function showAddLinkForm() {
-			$('#addLinkForm').fadeIn('slow');
-			$('#showAddLinkForm').fadeOut('fast');
-			$('#addLinkForm form input:first-of-type').focus();
-		}
-
-		function showAddCatForm() {
-			$('#addCatForm').fadeIn('slow');
-			$('#showAddCatForm').fadeOut('fast');
-			$('#addCatForm form input:first-of-type').focus();
-		}
-
-		$('a').on('click', function(event) {
-			var linkId = event.currentTarget.id.replace(/[^0-9]*/,'');
-				$.post('scripts/update-clicks.php?id=' + linkId, function() {
-					window.location.reload();
-				});
-			});
-
-		function alignThePlusses() {
-			$('.show-add-form').css({
-				'top':  $('#bestof').innerHeight() + 1.5 * $('.show-add-form').outerHeight()
-			});
-		}
-
-		alignThePlusses();
-
-		$(window).on('resize', alignThePlusses);
-
-		$('.desc').on('focusin', function(event) {
-			$(this).animate({
-				'height': '+=119px',
-				'width': '+=40px'
-			});
-			if ($(this).html() === 'No Description Available') {
-				$(this).select();
-			} else {
-				event.currentTarget.selectionStart = $(this).html().length;
-			}
-		});
-
-		$('.desc').on('focusout', function() {
-			$(this).animate({
-				'height': '-=119px',
-				'width': '-=40px'
-			});
-		});
-
-
-		$('#showAddLinkForm').on('click', showAddLinkForm);
-
-		$('#showAddCatForm').on('click', showAddCatForm);
-
-		$('.closexWrap').on('click', hideTheForm);
-
-		$('body').on('keypress', function(event) {
-			// Hotkey ALT + q to add a link
-			if (event.charCode === 113 && event.altKey === true) {
-				showAddLinkForm();
-			}
-			// Hotkey ALT + c to
-			else if (event.charCode === 99 && event.altKey === true) {
-				showAddCatForm();
-			}
-		});
-
-		$('.delete-button').on('click', function() {
-			if(confirm('Sure ?')) {
-				$.post('scripts/delete-link.php?id=' + $(this).siblings('[name="id"]')[0].value , function() {
-					window.location.reload();
-					});
-				}
-			});
-
-		$('.clear-clicks').on('click', function(event) {
-			if(!confirm('Are you sure you want to reset all the clicks to 0 ?')) {
-				event.preventDefault();
-			}
-		});
-
-		$('input[name="image"]').on('mouseover focusout', function(event) {
-			var imgIdName = 'prev' + $(this).parent().context.id;
-			var previewImage = "<div class='preview-image' id='" + imgIdName + "'><img src='dist/images/" + $(this)[0].value + "' alt=''></div>";
-			var imgId = '#' + imgIdName;
-			function showThePreview(preImg, imageId) {
-				if (typeof window.$('.preview-image')[0] === 'undefined') {
-					if (event.type === "mouseover") {
-						$('body').append(preImg);
-						$(imageId).css({
-							"top": event.pageY - 60,
-							"left": event.pageX + 24});
-						} else if (event.type === "focusout") {
-								$('body').append(preImg);
-								$(imageId).css({
-									"top": 196,
-									"right": 34
-								});
-						}
-				} else {
-					$('.preview-image').remove();
-					showThePreview(preImg,imgId);
-				}
-			}
-			showThePreview(previewImage,imgId);
-		});
-
-		$('input[name="image"]').on('mouseout focusin', function() {
-			var imgId = '#prev' + $(this).parent().context.id;
-			$(imgId).remove();
-		});
-
+	var $container = $('#innerWrap');
+	$container.masonry({
+		itemSelector: '.sub-sections'
 	});
+
+	alignThePlusses();
+
+	hoverButtonsOnLoad();
+
+	showRangeSelector(5000);
+
+	listenForClicks();
+
+});

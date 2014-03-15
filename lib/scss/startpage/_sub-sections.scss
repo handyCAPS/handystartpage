@@ -46,6 +46,7 @@
 	cursor: pointer;
 	transition: all 0.3s ease 0.5s;
 }
+
 .edit-button:after {
 	content: '';
 	display: inline-block;
@@ -57,9 +58,8 @@
 	left: 0;
 	transition: all 0.3s ease 0.5s;
 }
+
 .edit-button:hover {
-	-webkit-box-shadow: 0 0 15px #F5F;
-	-moz-box-shadow: 0 0 15px #F5F;
 	box-shadow: 0 0 15px #F5F;
 }
 
@@ -69,9 +69,5 @@
 }
 
 .sub-sections:hover .edit-button {
-	-webkit-transform: rotate(405deg);
-	-moz-transform: rotate(405deg);
-	-ms-transform: rotate(405deg);
-	-o-transform: rotate(405deg);
 	transform: rotate(405deg);
 }
