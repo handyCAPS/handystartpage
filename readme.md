@@ -19,13 +19,13 @@ For now, this requires a localhost server to work. I have a [WAMP server](http:/
 
 1. Install WAMP/LAMP/MAMP.
 2. Clone this repo in the localhost rootfolder or download and place it there
-3. Create an images folder in your cloned folder. Call it 'images'
+~~3. Create an images folder in your cloned folder. Call it 'images'~~
 4. Start your server
 5. Go to phpMyAdmin and create a database
 6. Import the sql into that db
-7. Open scripts/db/db-config.php and set your hostname, username, dbname and password
-8. Go to localhost/yourfoldername (or the LAMP/MAMP equivalent)
-9. You should see an empty page with two little plusses. The left plus is for adding a link, the right plus is for adding a category. You can also use the hotkeys: ALT + q for a new link and Alt + c for a new category.
+7. Go to localhost/yourfoldername (or the LAMP/MAMP equivalent)
+8. Enter your db credentials
+9. You should be taken to an empty page with two little plusses. The left plus is for adding a link, the right plus is for adding a category. You can also use the hotkeys: ALT + q for a new link and Alt + c for a new category.
 10. Start by adding a category. It needs a name and an order
 11. Now you have one or more categories, you can start adding links
 12. Don't forget to make it your homepage in your favourite browser('s) !
@@ -45,10 +45,8 @@ Finally you need to give the link an order. This can be an integer (whole number
 
 - Refactor code. This will be ongoing.
 - Automate setting up the db
-- Collect all files needed to run the app in dist folder
 - Build a drag and drop ordering interface for the links and the categories
-- Add a range selector to select the number of links in the Best Of
-- Hook up all the js through require
+- Hook up all the js through require ?
 - Make subcategories that will have their own page ?
 - Find or make a quirky and loveable drawing to be my logo
 - Get a cool sounding name that's missing a vowel
