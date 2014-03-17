@@ -6,6 +6,7 @@
  */
 function get_the_categories($db) {
 	$cat_array = ask_the_db($db, 'categories', '*', '', 'cat_order');
+
 	return $cat_array;
 }
 
@@ -17,6 +18,9 @@ function get_the_categories($db) {
  */
 function category_options($db, $current_cat = '') {
 	$cat_array = get_the_categories($db);
+	if (!is_array($cat_array)) {
+		return 'No categories yet';
+	}
 	if ($current_cat === '') {
 		$selected_cat = $cat_array[0]['cat_id'];
 	} else {

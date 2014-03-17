@@ -1,0 +1,24 @@
+#dbFormWrap {
+	text-align: center;
+		p {
+			background-color: #CCC;
+			padding: 4px 8px;
+			border-radius: 3px;
+		}
+		fieldset {
+			display: inline-block;
+			text-align: left;
+		}
+		label, input, p {
+			margin-bottom: 24px;
+		}
+		input:not([type='submit']) {
+			width: 14em;
+			margin-right: 0;
+		}
+		label {
+			display: inline-block;
+			width: 12em;
+			text-align: right;
+		}
+}

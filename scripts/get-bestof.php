@@ -56,3 +56,5 @@ function get_bestof($db) {
 	}
 	return $bestof_string;
 }
+
+$num_best = get_num_bestof($db);

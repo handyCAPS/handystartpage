@@ -2,7 +2,7 @@
 
 function get_layout($db, $name = 'default') {
 	$layout = ask_the_db($db, 'layout', '*', "name = '$name'");
-	if (!is_array($layout)) {
+	if (DEBUG && !is_array($layout)) {
 		var_dump($layout);
 		return;
 	}

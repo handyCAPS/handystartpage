@@ -1,12 +1,12 @@
-<div id="showAddCatForm" class="show-add-form" title="Add a category"></div>
-<section id="addCatForm" class='add-form'>
+
+<section id="addCatForm" class="add-form">
 	<form method="POST" action="scripts/add-category.php">
 		<fieldset>
 			<legend>Add category</legend>
 			<label for="cat_name">Name</label>
-			<input type="text" id='cat_name' name='cat_name'>
+			<input type="text" id="cat_name" name="cat_name">
 			<label for="cat_order">Order</label>
-			<input type="text" id='cat_order' name='cat_order' class="short">
+			<input type="text" id="cat_order" name="cat_order" class="short">
 			<input type="submit" value="Add">
 			<div class="closexWrap"><span class="closex"></span></div>
 		</fieldset>

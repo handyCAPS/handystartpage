@@ -1,22 +1,25 @@
-/*! handystartpage - v0.0.1 - 2014-03-15
+/*! handystartpage - v0.0.1 - 2014-03-16
 * Copyright (c) 2014 Tim Doppenberg; Licensed  */
 
-function hideTheForm() {
-	var parent = $(this).parents('section'),
+function hideTheForm(el) {
+
+	var parent = el.parents('section'),
 	parentId = parent[0].id,
 	buttonToShow = '#show' + parentId[0].toUpperCase() + parentId.substr(1);
-	parent.fadeOut('fast');
+
+	parent.hide('fast');
+
 	$(buttonToShow).fadeIn('slow');
 }
 
 function showAddLinkForm() {
-	$('#addLinkForm').fadeIn('slow');
+	$('#addLinkForm').slideDown('slow');
 	$('#showAddLinkForm').fadeOut('fast');
 	$('#addLinkForm form input:first-of-type').focus();
 }
 
 function showAddCatForm() {
-	$('#addCatForm').fadeIn('slow');
+	$('#addCatForm').slideDown('slow');
 	$('#showAddCatForm').fadeOut('fast');
 	$('#addCatForm form input:first-of-type').focus();
 }
@@ -64,12 +67,43 @@ $('.desc').on('focusout', function() {
 	});
 });
 
+function closeAfterForm() {
 
-$('#showAddLinkForm').on('click', showAddLinkForm);
+	$('#formWrap').animate({
+		'height': '-=108px'
+	}, 'slow');
 
-$('#showAddCatForm').on('click', showAddCatForm);
+}
 
-$('.closexWrap').on('click', hideTheForm);
+function openForForm() {
+
+	$('#formWrap').animate({
+		'height': '+=108px'
+	}, 'slow');
+
+}
+
+$('.closexWrap').on('click', function() {
+	var clicked = $(this);
+	hideTheForm(clicked);
+	closeAfterForm();
+});
+
+$('#showAddLinkForm').on('click', function () {
+
+	openForForm();
+	showAddLinkForm();
+
+});
+
+$('#showAddCatForm').on('click', function() {
+
+	openForForm();
+	showAddCatForm();
+
+});
+
+
 
 $('body').on('keypress', function(event) {
 	// Hotkey ALT + q to add a link

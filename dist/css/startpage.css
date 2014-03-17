@@ -828,6 +828,31 @@ img {
   top: 0;
   right: 33.333%; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_db-form\.scss}line{font-family:\000031}}
+#dbFormWrap {
+  text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_db-form\.scss}line{font-family:\000033}}
+  #dbFormWrap p {
+    background-color: #CCC;
+    padding: 4px 8px;
+    border-radius: 3px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_db-form\.scss}line{font-family:\000038}}
+  #dbFormWrap fieldset {
+    display: inline-block;
+    text-align: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_db-form\.scss}line{font-family:\0000312}}
+  #dbFormWrap label, #dbFormWrap input, #dbFormWrap p {
+    margin-bottom: 24px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_db-form\.scss}line{font-family:\0000315}}
+  #dbFormWrap input:not([type='submit']) {
+    width: 14em;
+    margin-right: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_db-form\.scss}line{font-family:\0000319}}
+  #dbFormWrap label {
+    display: inline-block;
+    width: 12em;
+    text-align: right; }
+
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_closex\.scss}line{font-family:\000031}}
 .closex {
   width: 12px;
