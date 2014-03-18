@@ -24,3 +24,14 @@ input[type="range"] {
 	border-radius: 3px;
 	opacity: 0;
 }
+
+.range_label {
+		&:after {
+			content: 'Set number of bestofs ->';
+			color: #CCC;
+			font-size: 0.618em;
+			position: absolute;
+			top: 0;
+			left: -128px;
+		}
+}

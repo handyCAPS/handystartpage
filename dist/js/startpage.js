@@ -131,9 +131,14 @@ $('.clear-clicks').on('click', function(event) {
 });
 
 $('input[name="image"]').on('mouseover focusout', function(event) {
-
+	var offsetTop = parseFloat(event.currentTarget.offsetTop);
 	var imgIdName = 'prev' + $(this).parent().context.id,
-			previewImage = "<div class='preview-image' id='" + imgIdName + "'><img src='dist/images/" + $(this)[0].value + "' alt=''></div>",
+			previewImage =
+				"<div class='preview-image' id='" +
+				imgIdName +
+				"'><img src='dist/images/" +
+				$(this)[0].defaultValue +
+				"' alt=''></div>",
 			imgId = '#' + imgIdName;
 
 	function showThePreview(preImg, imageId) {
@@ -146,7 +151,7 @@ $('input[name="image"]').on('mouseover focusout', function(event) {
 					"left": event.pageX + 24});
 				} else if (event.type === "focusout" && !update) {
 						$(imageId).css({
-							"top": 208,
+							"top": offsetTop,
 							"right": 12
 						});
 				}
@@ -215,8 +220,13 @@ function timingOut(msecs) {
 	return dfd.promise();
 }
 
+/**
+ * Flyout the range selector, then tuck it away
+ * @param  {int} after How long to wait before showing
+ * @return {void}
+ */
 function showRangeSelector(after) {
-
+	// Place the element below the bestofs
 	placeRangeWrap();
 
 	$.when(timingOut(after)).done(function() {
@@ -225,8 +235,10 @@ function showRangeSelector(after) {
 			rangeDisplay = $('.range_display'),
 			rangeWrap = $('.range_wrap');
 
+		// Slide in the element
 		range.show('slow');
 
+		// Showing the help elements
 		rangeDisplay.animate({
 			'opacity': 1
 		});
@@ -235,43 +247,59 @@ function showRangeSelector(after) {
 			'opacity': 1
 		});
 
+		// This class has some :after content
 		rangeWrap.addClass('range_label');
 
+		// Show current value in the display window
 		rangeDisplay.html(range.val());
 
+		// Wait for a bit
 		$.when(timingOut(2000)).done(function() {
 
+			// This class shrinks the element
 			rangeWrap.addClass('tiny');
 
 			rangeWrap.removeClass('range_label');
 
+			// Tuck the element away in a corner
 			placeTinyRangeWrap();
 
 		});
 
+		// As soon as the slider get touched, the display gets updated
 		range.on('input', function() {
 			rangeDisplay.html($(this).val());
 		});
 
+		// The element can be tuck away by the user
 		$('.range_wrap .close').on('click', function() {
+			// Shrink
 			rangeWrap.addClass('tiny');
+			// And tuck
 			placeTinyRangeWrap();
-			alignThePlusses();
 		});
 
+		/**
+		 * When the value changes, on mouseup, two calls to the db are made.
+		 * First the layout table gets updated, then a new number of bestofs gets ajaxed in
+		 * @return {void}
+		 */
 		range.on('change', function() {
 
 			$('#bestOfWrap').load('scripts/update-bestof.php', {'bestOfRange': range.val()}, function() {
+				// content get ajaxed in, so eventhandlers need to be reattached
 				listenForClicks();
+				// If the bestof window gets bigger, the slider needs to be moved
 				placeRangeWrap();
+				// Same goes for the plusses
 				alignThePlusses();
 			});
 
 		});
 
+		// Hovering over the small element makes it big again and places it back below the bestofs
 		range.on('mouseover', function() {
 			$('.tiny').removeClass('tiny');
-			range.addClass('range_label');
 			placeRangeWrap();
 		});
 
@@ -290,7 +318,9 @@ function checkCookie(name) {
 	if (pos) {
 		return pos.index;
 	}
+
 	return pos;
+
 }
 
 function getCookieValue(name) {
@@ -309,14 +339,15 @@ function hoverButtonsOnLoad() {
 		function() {
 
 			// Setting a counter to stop this from happening too much
-			var counter = "howManyLoads=";
-			console.log( getCookieValue(counter));
-			var howManyLoads = getCookieValue(counter) || 0;
+			var counter = "howManyLoads=",
+				howManyLoads = getCookieValue(counter) || 0;
+
 			howManyLoads++;
+
 			document.cookie = counter + howManyLoads + ";max-age=60";
 
 			// If we're not on the frontpage, none of this should be happening
-			if (howManyLoads > 5 || window.location.search !== '') {
+			if (howManyLoads > 1 || window.location.search !== '') {
 				showRangeSelector(500);
 				return this.fail();
 			}

@@ -939,6 +939,15 @@ input[type="range"] {
   border-radius: 3px;
   opacity: 0; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_range\.scss}line{font-family:\0000329}}
+.range_label:after {
+  content: 'Set number of bestofs ->';
+  color: #CCC;
+  font-size: 0.618em;
+  position: absolute;
+  top: 0;
+  left: -128px; }
+
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_helpers\.scss}line{font-family:\000031}}
 .delete-button {
   font-size: 0.1px;

@@ -9,4 +9,15 @@ $upload = new Image_Upload();
 
 $result = $upload->upload($_FILES['image']);
 
-var_dump($result);
+if ($result['state']) {
+	$img =
+		"<img src='"
+		. $result['location_rel']
+		. $result['name']
+		. "' alt=''>";
+
+	echo $img;
+
+}
+
+// var_dump($result);
