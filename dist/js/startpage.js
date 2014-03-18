@@ -1,4 +1,4 @@
-/*! handystartpage - v0.0.1 - 2014-03-17
+/*! handystartpage - v0.0.1 - 2014-03-18
 * Copyright (c) 2014 Tim Doppenberg; Licensed  */
 
 function hideTheForm(el) {
@@ -200,7 +200,17 @@ function get_the_file() {
 			contentType: false,
 			processData: false,
 			success: function(response) {
-				$('.testdiv').html(response);
+				
+				var resultObj = JSON.parse(response);
+				
+				if (resultObj.hasOwnProperty('uploadErrors')) {
+				console.log(resultObj.uploadErrors);
+				} else {
+					var img = "<img src='" + resultObj.imgLocation + resultObj.imgName + "' alt=''>";
+					$('.testdiv').html(img);
+					$('#img_id')[0].value = resultObj.imgId;
+					return true;
+				}
 			}
 
 		});

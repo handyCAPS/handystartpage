@@ -7,6 +7,7 @@
 		<input type='text' id='link' name='link' class='long' required>
 		<label for='image'>Image</label>
 		<input type='file' id='image' name='image' class='medium'>
+		<input type="hidden" name="img_id" id="img_id" value="">
 		<label for='name'>Name</label>
 		<input type='text' id='name' name='name' class='medium' required>
 		<label for='cat_id'>Category</label>

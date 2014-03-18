@@ -137,7 +137,7 @@ Class File_Upload {
 		if (!empty($this->allowed_mimes)) {
 
 			if (!in_array($file_mime, $this->allowed_mimes)) {
-						$this->collect_errors('Mime type not allowed.');
+						$this->collect_errors('Mime type not allowed. Please select an appropriate file format.');
 			}
 		} else {
 				$this->collect_errors('Allowed mime-types not set.');
