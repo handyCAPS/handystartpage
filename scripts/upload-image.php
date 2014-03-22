@@ -20,19 +20,29 @@ if ($result['state']) {
 
 	$db_result = add_to_the_db($db, 'images', "img_name, img_mime, img_location", "'$name', '$mime', '$location' ");
 
-	$img =
+	if ($db_result) {
+		$img =
 		"<img src='"
 		. $result['location_rel']
 		. $result['name']
 		. "' alt=''>";
 
-	$info = array(
+		$info = array(
 			'imgName' => $name,
 			'imgLocation' => $location,
 			'imgId' => $db->insert_id
 		);
 
-	echo json_encode($info);
+		echo json_encode($info);
+	} else {
+		$errors = array(
+				'db_error' => $db_result
+			);
+
+		echo json_encode($errors);
+
+	}
+
 
 } else {
 	$upload_errors = array('uploadErrors' => $result['upload_errors']);

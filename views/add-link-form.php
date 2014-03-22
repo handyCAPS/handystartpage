@@ -1,12 +1,12 @@
 
 <section class='form add-form' id='addLinkForm'>
-	<form action='scripts/add-link.php' method='POST' enctype='multipart/form-data'>
+	<form action='scripts/add-link-new.php' method='POST' enctype='multipart/form-data'>
 	<fieldset>
 		<legend>Add new Link</legend>
 		<label for='link'>Link</label>
 		<input type='text' id='link' name='link' class='long' required>
 		<label for='image'>Image</label>
-		<input type='file' id='image' name='image' class='medium'>
+		<input type='file' id='image' name='image' class='medium image-input'>
 		<input type="hidden" name="img_id" id="img_id" value="">
 		<label for='name'>Name</label>
 		<input type='text' id='name' name='name' class='medium' required>

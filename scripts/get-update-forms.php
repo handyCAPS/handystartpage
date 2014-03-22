@@ -22,7 +22,7 @@ function update_list_forms($db,$cat) {
 					<label for='link'>link</label>
 					<input required type='text' value='$link' name='link' id='link_$idname' class='long'>
 					<label for='image'>img</label>
-					<input required type='file' name='image' id='image_$idname' class='medium' value='$image'>
+					<input type='file' name='image' id='image_$idname' class='medium image-input' value='$image'>
 					<input type='hidden' name='img_id' id='img_id_$idname' value=''>
 					<label for='description'>desc</label>
 					<textarea name='description' id='description_$idname' class='desc'>$description</textarea>

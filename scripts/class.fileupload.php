@@ -95,8 +95,19 @@ Class File_Upload {
 	}
 
 	private function get_unique_file_name() {
-		$unique = sha1(mt_rand(1, 9999) . $this->tmp_name . uniqid());
-		$this->set_file_name($unique);
+
+		$unique = sha1(mt_rand(1, 9999) . time() . $this->tmp_name . uniqid());
+
+		if (!file_exists('../' . $this->destination . $unique)) {
+
+			$this->set_file_name($unique);
+
+		} else {
+
+			$this->get_unique_file_name();
+
+		}
+
 	}
 
 	private function set_file_info($file) {

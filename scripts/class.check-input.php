@@ -12,6 +12,19 @@ Class CheckInput {
 			case 'link':
 				$this->check_link($input);
 				break;
+
+			case 'image':
+				$this->check_image($input);
+				break;
+
+			case 'order':
+				$this->check_numeric($input);
+				break;
+
+			case 'name':
+				$this->check_semi_colon($input);
+				break;
+
 		}
 
 		if (!$this->get_errors()) {
@@ -34,6 +47,22 @@ Class CheckInput {
 
 		if ($bad_url !== 0 || !filter_var($link, FILTER_VALIDATE_URL)) {
 			$this->collect_errors('link', 'Please enter a valid url.');
+		}
+
+	}
+
+	private function check_numeric($var) {
+		return is_numeric($var);
+	}
+
+	private function check_semi_colon($string) {
+
+		$colonic = preg_match('/\;/', $string);
+
+		if ($colonic !== 0) {
+
+			$this->collect_errors('colon', 'Your input cannot contain a semi-colon (;).');
+
 		}
 
 	}

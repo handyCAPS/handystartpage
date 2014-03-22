@@ -19,7 +19,7 @@ function ask_the_db($db, $table, $select = '*', $where = '', $order = '', $dir =
 		}
 	}
 	if (DEBUG && !$results) {
-		return $db->error();
+		return $db->error . ' ' . $sql;
 	}
 	return $result_array;
 }
@@ -31,7 +31,7 @@ function update_the_db($db, $table, $rows, $where) {
 	$results = $db->query($sql);
 
 	if (DEBUG && !$results) {
-		return $db->error();
+		return $db->error . ' ' . $sql;
 	}
 
 	return $results;
@@ -44,7 +44,7 @@ function add_to_the_db($db, $table, $rows, $values) {
 	$results = $db->query($sql);
 
 	if (DEBUG && !$results) {
-		return $db->error();
+		return $db->error . ' ' . $sql;
 	}
 
 	return $results;
@@ -57,7 +57,7 @@ function remove_from_the_db($db, $table, $where) {
 	$results = $db->query($sql);
 
 	if (DEBUG && !$results) {
-		return $db->error();
+		return $db->error . ' ' . $sql;
 	}
 
 	return $results;

@@ -1,4 +1,4 @@
-/*! handystartpage - v0.0.1 - 2014-03-18
+/*! handystartpage - v0.0.1 - 2014-03-21
 * Copyright (c) 2014 Tim Doppenberg; Licensed  */
 
 function hideTheForm(el) {
@@ -44,6 +44,22 @@ function placeTinyRangeWrap() {
 	});
 }
 
+function closeAfterForm() {
+
+	$('#formWrap').animate({
+		'min-height': '-=108px'
+	}, 'slow');
+
+}
+
+function openForForm() {
+
+	$('#formWrap').animate({
+		'min-height': '+=108px'
+	}, 'slow');
+
+}
+
 $(window).on('resize', function() {
 	alignThePlusses();
 });
@@ -66,22 +82,6 @@ $('.desc').on('focusout', function() {
 		'width': '-=40px'
 	});
 });
-
-function closeAfterForm() {
-
-	$('#formWrap').animate({
-		'height': '-=108px'
-	}, 'slow');
-
-}
-
-function openForForm() {
-
-	$('#formWrap').animate({
-		'height': '+=108px'
-	}, 'slow');
-
-}
 
 $('.closexWrap').on('click', function() {
 	var clicked = $(this);
@@ -178,11 +178,14 @@ function listenForClicks() {
 	});
 }
 
-function get_the_file() {
-	$('#image').on('focusout', function() {
-		var testdiv = "<div class='testdiv'></div>";
-		$('body').append(testdiv);
-		$('.testdiv').css({
+function ajaxUploadImage(el) {
+
+	var element = el;
+	console.log(element.target);
+
+		var previmage = "<div class='previmage'></div>";
+		$('body').append(previmage);
+		$('.previmage').css({
 			'display': 'inline-block',
 			'background-color': '#CCC',
 			'position': 'absolute',
@@ -191,7 +194,7 @@ function get_the_file() {
 
 		var formData = new FormData();
 
-		formData.append('image', $('#image')[0].files[0]);
+		formData.append('image', $(el.target)[0].files[0]);
 
 		$.ajax({
 			url: "scripts/upload-image.php",
@@ -200,25 +203,26 @@ function get_the_file() {
 			contentType: false,
 			processData: false,
 			success: function(response) {
-				
+
 				var resultObj = JSON.parse(response);
-				
+
 				if (resultObj.hasOwnProperty('uploadErrors')) {
 				console.log(resultObj.uploadErrors);
 				} else {
 					var img = "<img src='" + resultObj.imgLocation + resultObj.imgName + "' alt=''>";
-					$('.testdiv').html(img);
+					$('.previmage').html(img);
 					$('#img_id')[0].value = resultObj.imgId;
-					return true;
 				}
 			}
 
 		});
 
-	});
 }
 
-get_the_file();
+$('.image-input').on('focusout', function(event) {
+	ajaxUploadImage(event);
+});
+
 
 function timingOut(msecs) {
 	// creating a new deffered object
