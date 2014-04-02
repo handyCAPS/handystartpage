@@ -1,4 +1,4 @@
-/*! handystartpage - v0.0.1 - 2014-03-21
+/*! handystartpage - v0.0.1 - 2014-04-01
 * Copyright (c) 2014 Tim Doppenberg; Licensed  */
 
 function hideTheForm(el) {
@@ -180,8 +180,10 @@ function listenForClicks() {
 
 function ajaxUploadImage(el) {
 
-	var element = el;
-	console.log(element.target);
+
+	if (document.location.search.match(/opdate/) !== null) {
+		console.log('it does');
+
 
 		var previmage = "<div class='previmage'></div>";
 		$('body').append(previmage);
@@ -216,14 +218,14 @@ function ajaxUploadImage(el) {
 			}
 
 		});
-
+	}
 }
 
 $('.image-input').on('focusout', function(event) {
 	ajaxUploadImage(event);
 });
 
-
+console.log(document.location.search.match(/opdate/));
 function timingOut(msecs) {
 	// creating a new deffered object
 	var dfd = new jQuery.Deferred();
