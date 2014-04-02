@@ -13,7 +13,7 @@ function update_list_forms($db,$cat) {
 		$idname = strtolower(preg_replace("/[^a-zA-Z]/", '', $name));
 		$categories = category_options($db, $cat_id);
 		$form_string .= "
-		<form enctype='multipart/formdata' method='POST' action='scripts/update-link.php' class='update-list-form'>
+		<form enctype='multipart/form-data' method='POST' action='scripts/update-link.php' class='update-list-form'>
 			<fieldset>
 					<input type='hidden' value='$id' name='id' id='id_$idname'>
 					<input required type='text' value='$name' name='name' id='name_$idname' class='long'>
