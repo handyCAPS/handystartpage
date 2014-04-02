@@ -1,4 +1,4 @@
-/*! handystartpage - v0.0.1 - 2014-04-01
+/*! handystartpage - v0.0.1 - 2014-04-02
 * Copyright (c) 2014 Tim Doppenberg; Licensed  */
 
 function hideTheForm(el) {
@@ -225,7 +225,7 @@ $('.image-input').on('focusout', function(event) {
 	ajaxUploadImage(event);
 });
 
-console.log(document.location.search.match(/opdate/));
+
 function timingOut(msecs) {
 	// creating a new deffered object
 	var dfd = new jQuery.Deferred();

@@ -95,8 +95,19 @@ Class File_Upload {
 	}
 
 	private function get_unique_file_name() {
-		$unique = sha1(mt_rand(1, 9999) . $this->destination . uniqid());
-		$this->set_file_name($unique);
+
+		$unique = sha1(mt_rand(1, 9999) . time() . $this->tmp_name . uniqid());
+
+		if (!file_exists('../' . $this->destination . $unique)) {
+
+			$this->set_file_name($unique);
+
+		} else {
+
+			$this->get_unique_file_name();
+
+		}
+
 	}
 
 	private function set_file_info($file) {
@@ -137,7 +148,7 @@ Class File_Upload {
 		if (!empty($this->allowed_mimes)) {
 
 			if (!in_array($file_mime, $this->allowed_mimes)) {
-						$this->collect_errors('Mime type not allowed.');
+						$this->collect_errors('Mime type not allowed. Please select an appropriate file format.');
 			}
 		} else {
 				$this->collect_errors('Allowed mime-types not set.');

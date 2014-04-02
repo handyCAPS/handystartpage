@@ -25,7 +25,7 @@ function get_bestof($db) {
 
 	$bestof_string = '';
 
-	$results = ask_the_db($db, 'links', '*','', 'clicks', 'DESC', $num_best);
+	$results = ask_the_db($db, 'links, images', '*','links.img_id = images.img_id', 'clicks', 'DESC', $num_best);
 	if (!is_array($results)) {
 
 		if (DEBUG) {
@@ -40,8 +40,9 @@ function get_bestof($db) {
 			. $array['link']
 			. "' target='_blank' id='best"
 			. $array['id']
-			. "'><div class='flipper'><img src='dist/images/"
-			. $array['image']
+			. "'><div class='flipper'><img src='"
+			.	$array['img_location']
+			. $array['img_name']
 			. "' alt='"
 			. $array['name']
 			. "' title='"

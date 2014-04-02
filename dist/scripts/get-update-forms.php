@@ -13,7 +13,7 @@ function update_list_forms($db,$cat) {
 		$idname = strtolower(preg_replace("/[^a-zA-Z]/", '', $name));
 		$categories = category_options($db, $cat_id);
 		$form_string .= "
-		<form method='POST' action='scripts/update-link.php' class='update-list-form'>
+		<form enctype='multipart/form-data' method='POST' action='scripts/update-link.php' class='update-list-form'>
 			<fieldset>
 					<input type='hidden' value='$id' name='id' id='id_$idname'>
 					<input required type='text' value='$name' name='name' id='name_$idname' class='long'>
@@ -22,7 +22,8 @@ function update_list_forms($db,$cat) {
 					<label for='link'>link</label>
 					<input required type='text' value='$link' name='link' id='link_$idname' class='long'>
 					<label for='image'>img</label>
-					<input required type='text' value='$image' name='image' id='image_$idname' class='long'>
+					<input type='file' name='image' id='image_$idname' class='medium image-input' value='$image'>
+					<input type='hidden' name='img_id' id='img_id_$idname' value=''>
 					<label for='description'>desc</label>
 					<textarea name='description' id='description_$idname' class='desc'>$description</textarea>
 					<label for='cat_id'>cat</label>

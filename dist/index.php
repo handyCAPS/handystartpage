@@ -1,10 +1,12 @@
 <?php
 
 	// These scripts are required on every page (so far)
-	require_once 'scripts/db/connection.php';
-	require_once 'scripts/query.php';
-	require_once 'scripts/get-categories.php';
 
+	if (is_file('scripts/db/sp-config.php')) {
+		require_once 'scripts/db/connection.php';
+		require_once 'scripts/query.php';
+		require_once 'scripts/get-categories.php';
+	}
 
 	include 'views/header.php' ;
 
@@ -31,13 +33,17 @@
 
 			break;
 
+		// If no configs are set, show a form to enter them
+		case !is_file('scripts/db/sp-config.php'):
+
+			include 'views/db-form.php';
+			break;
+
 		// If no parameters are set, the default frontpage is called
 		default :
 
-			require_once 'scripts/get-subsections.php';
 			include 'views/best-of.php' ;
-			include 'views/add-link-form.php' ;
-			include 'views/add-cat-form.php' ;
+			include 'views/forms.php';
 			include 'views/sub-sections.php' ;
 			break;
 	}

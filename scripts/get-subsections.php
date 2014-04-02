@@ -13,28 +13,28 @@ function get_the_links($db, $full_array, $server_img_array, $cat_id) {
 	$link_array = array();
 	$link = '';
 
-	if (is_array($full_array)) {
-		foreach ($full_array as $key => $assoc) {
-			if ($assoc['cat_id'] === $cat_id && $assoc['image']) {
-				$link = "<div class='container'><a href='"
-				. $assoc['link']
-				. "' target='_blank' id='"
-				. $assoc['id']
-				. "'><div class='flipper'><img src='dist/images/"
-				. $assoc['image']
-				. "' alt='"
-				. $assoc['name']
-				. "' title='"
-				. $assoc['name']
-				. " ["
-				. $assoc['link_order']
-				. "]'><div class='description'><p>"
-				. $assoc['description']
-				. "</p></div></div></a></div>" ;
-				array_push($link_array, $link);
-			}
-		}
-	}
+	// if (is_array($full_array)) {
+	// 	foreach ($full_array as $key => $assoc) {
+	// 		if ($assoc['cat_id'] === $cat_id && $assoc['image']) {
+	// 			$link = "<div class='container'><a href='"
+	// 			. $assoc['link']
+	// 			. "' target='_blank' id='"
+	// 			. $assoc['id']
+	// 			. "'><div class='flipper'><img src='dist/images/"
+	// 			. $assoc['image']
+	// 			. "' alt='"
+	// 			. $assoc['name']
+	// 			. "' title='"
+	// 			. $assoc['name']
+	// 			. " ["
+	// 			. $assoc['link_order']
+	// 			. "]'><div class='description'><p>"
+	// 			. $assoc['description']
+	// 			. "</p></div></div></a></div>" ;
+	// 			array_push($link_array, $link);
+	// 		}
+	// 	}
+	// }
 
 	if (is_array($server_img_array)) {
 		foreach ($server_img_array as $key => $assoc) {

@@ -1,7 +1,5 @@
 <?php
 
-<?php
-
 require_once 'db/connection.php';
 require_once 'query.php';
 
@@ -65,15 +63,17 @@ function update_link($db) {
 	$id 					= $_POST['id'];
 	$image 				= "";
 
+
+	// temporarily setting images to null if image is uploaded to server.
 	if ($img_id = get_image_id($db)) {
 		if (is_array($img_id)) {
 			$errors = implode("", $img_id);
 		} else {
-			$image = "img_id='$img_id', ";
+			$image = "img_id='$img_id', image=null, ";
 		}
 	}
 
-	if ($db_result = update_the_db($db, 'links', "name='$name', link='$link', link_order='$link_order', cat_id='$cat_id', $image clicks='$clicks', description='$description'", "id='$id'")) {
+	if ($db_result = update_the_db($db, 'links', "name='$name', link='$link', link_order='$link_order', cat_id='$cat_id', $image clicks='$clicks', description='$description'", "id='$id'") === TRUE) {
 		header('Location:../?update=links&category=' . $cat_id);
 	} else {
 		if (DEBUG) {
