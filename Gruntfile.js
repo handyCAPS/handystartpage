@@ -133,7 +133,7 @@ module.exports = function(grunt) {
     },
     copy: {
       viewsNscripts: {
-        src: ['views/*','scripts/*'],
+        src: ['views/*','scripts/*', 'scripts/db/*'],
         dest: 'dist/',
         options: {
           process: function(content) {
