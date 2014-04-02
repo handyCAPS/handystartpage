@@ -1,0 +1,1041 @@
+/*! normalize.css v3.0.0 | MIT License | git.io/normalize */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\000039}}
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Remove default margin.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\0000319}}
+body {
+  margin: 0; }
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\0000341}}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block; }
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\0000353}}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\0000363}}
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9.
+ * Hide the `template` element in IE, Safari, and Firefox < 22.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\0000374}}
+[hidden],
+template {
+  display: none; }
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\0000385}}
+a {
+  background: transparent; }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\0000394}}
+a:active,
+a:hover {
+  outline: 0; }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\00003105}}
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\00003114}}
+b,
+strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\00003122}}
+dfn {
+  font-style: italic; }
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\00003131}}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\00003140}}
+mark {
+  background: #ff0;
+  color: #000; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\00003149}}
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\00003158}}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\00003165}}
+sup {
+  top: -0.5em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\00003169}}
+sub {
+  bottom: -0.25em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\00003180}}
+img {
+  border: 0; }
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\00003188}}
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\00003199}}
+figure {
+  margin: 1em 40px; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\00003207}}
+hr {
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0; }
+
+/**
+ * Contain overflow in all browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\00003217}}
+pre {
+  overflow: auto; }
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\00003228}}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\00003252}}
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\00003262}}
+button {
+  overflow: visible; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8+, and Opera
+ * Correct `select` style inheritance in Firefox.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\00003274}}
+button,
+select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\00003289}}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\00003299}}
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\00003308}}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\00003318}}
+input {
+  line-height: normal; }
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\00003331}}
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\00003343}}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\00003353}}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box; }
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\00003367}}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\00003375}}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\00003386}}
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Remove default vertical scrollbar in IE 8/9.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\00003395}}
+textarea {
+  overflow: auto; }
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\00003404}}
+optgroup {
+  font-weight: bold; }
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\00003415}}
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/_normalize\.scss}line{font-family:\00003421}}
+td,
+th {
+  padding: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_toplevel\.scss}line{font-family:\000031}}
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_toplevel\.scss}line{font-family:\000037}}
+body {
+  background: url("../../img/dark_geometric.png") #222222;
+  font-family: 'Open Sans', Arial, Verdana, sans-serif;
+  text-rendering: optimizeLegibility; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_toplevel\.scss}line{font-family:\0000314}}
+#outerWrap {
+  width: 96%;
+  margin: 0 auto;
+  position: relative;
+  padding: 12px 0px 24px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_toplevel\.scss}line{font-family:\0000321}}
+h1 {
+  font-size: 24px;
+  color: #CCC;
+  text-align: center; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_forms\.scss}line{font-family:\000031}}
+legend {
+  background-color: #CCC;
+  padding: 2px 6px;
+  border-radius: 3px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_forms\.scss}line{font-family:\000037}}
+fieldset {
+  padding: 16px;
+  border: 1px solid #AAA;
+  border-radius: 3px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_forms\.scss}line{font-family:\0000313}}
+input.long {
+  width: 8.3em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_forms\.scss}line{font-family:\0000317}}
+input.medium, select {
+  width: 6.2em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_forms\.scss}line{font-family:\0000321}}
+input.short {
+  width: 2.4em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_forms\.scss}line{font-family:\0000325}}
+input, label, select, textarea {
+  height: 28.5px;
+  vertical-align: middle;
+  border: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_forms\.scss}line{font-family:\0000331}}
+input, select, textarea {
+  margin-right: 6px;
+  border-radius: 0px 2.6px 2.6px 0px;
+  border: none;
+  padding: 0 3px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_forms\.scss}line{font-family:\0000337}}
+textarea {
+  width: 108px;
+  padding: 3px 2px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_forms\.scss}line{font-family:\0000342}}
+select {
+  padding: 2px 0px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_forms\.scss}line{font-family:\0000349}}
+input[type="submit"], input[type="button"] {
+  height: 28.5px;
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 2px 5px 3px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_forms\.scss}line{font-family:\0000355}}
+input[type="submit"] {
+  position: relative;
+  top: 0;
+  background-color: #629041;
+  border: 2px solid transparent;
+  border-bottom-color: #95c176;
+  -webkit-transition: 0.3s;
+  transition: 0.3s; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_forms\.scss}line{font-family:\0000362}}
+  input[type="submit"]:hover {
+    top: 1px;
+    background-color: #4a6d31;
+    border-bottom-color: #324a21;
+    color: #95c176; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_forms\.scss}line{font-family:\0000369}}
+input[type="file"] {
+  padding: 0;
+  margin: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_forms\.scss}line{font-family:\0000375}}
+label {
+  background-color: #ACC;
+  border-radius: 3px 0 0 3px;
+  padding: 4px;
+  margin-right: -3px;
+  font-size: 0.9em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_images\.scss}line{font-family:\000031}}
+img {
+  border-radius: 5px 5px / 3px 3px;
+  background-color: #FFF; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_images\.scss}line{font-family:\000037}}
+.preview-image img {
+  width: 92px;
+  height: 92px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_description\.scss}line{font-family:\000031}}
+.container {
+  -webkit-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+  position: relative;
+  display: inline-block;
+  width: 72px;
+  height: 72px;
+  margin: 8px;
+  border-radius: 5px 5px / 3px 3px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_description\.scss}line{font-family:\000039}}
+  .container img {
+    height: 72px;
+    width: 72px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_description\.scss}line{font-family:\0000313}}
+  .container:hover .flipper, .container a:focus .flipper {
+    -webkit-transform: rotateY(180deg) scale(2);
+    -ms-transform: rotateY(180deg) scale(2);
+    transform: rotateY(180deg) scale(2);
+    z-index: 5; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_description\.scss}line{font-family:\0000316}}
+    .container:hover .flipper .description, .container a:focus .flipper .description {
+      opacity: 1; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_description\.scss}line{font-family:\0000322}}
+.flipper {
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: 0.6s 1s cubic-bezier(0.9, 0, 0.5, 1);
+  transition: 0.6s 1s cubic-bezier(0.9, 0, 0.5, 1); }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_description\.scss}line{font-family:\0000327}}
+.description {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #3AF;
+  color: #CCC;
+  font-size: 8px;
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  -webkit-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.3s 1.35s;
+  transition: all 0.3s 1.35s; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_description\.scss}line{font-family:\0000341}}
+  .description p {
+    padding: 0px 4px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_sub-sections\.scss}line{font-family:\000031}}
+.sub-sections {
+  display: inline-block;
+  width: -webkit-calc(33.3333% - 24px);
+  width: calc(33.3333% - 24px);
+  vertical-align: top;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  margin: 12px;
+  margin-bottom: 24px;
+  padding: 16px 0px;
+  position: relative;
+  text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_sub-sections\.scss}line{font-family:\0000312}}
+  .sub-sections h2 {
+    display: inline-block;
+    font-family: 'Open Sans',Verdana, Arial sans-serif;
+    font-weight: 100;
+    color: #A5C5EB;
+    background-image: url("../../img/dark_geometric.png");
+    background-color: #222;
+    position: absolute;
+    top: -0.82em;
+    left: 5px;
+    padding: 0 5px;
+    margin: 0;
+    text-shadow: 1px 1px 1px #222; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_sub-sections\.scss}line{font-family:\0000328}}
+#bestof {
+  padding: 12px 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_sub-sections\.scss}line{font-family:\0000332}}
+.wide {
+  width: -webkit-calc(100% - 24px);
+  width: calc(100% - 24px);
+  margin: 1em auto 24px 12px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_sub-sections\.scss}line{font-family:\0000337}}
+.edit-button {
+  display: inline-block;
+  opacity: 0;
+  width: 12px;
+  height: 24px;
+  background-color: #ccc;
+  position: absolute;
+  right: -2px;
+  top: -8px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease 0.5s;
+  transition: all 0.3s ease 0.5s; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_sub-sections\.scss}line{font-family:\0000350}}
+.edit-button:after {
+  content: '';
+  display: inline-block;
+  opacity: 0;
+  border: 6px solid transparent;
+  border-top-color: #ccc;
+  position: absolute;
+  bottom: -16px;
+  left: 0;
+  -webkit-transition: all 0.3s ease 0.5s;
+  transition: all 0.3s ease 0.5s; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_sub-sections\.scss}line{font-family:\0000362}}
+.edit-button:hover {
+  -webkit-box-shadow: 0 0 15px #F5F;
+  box-shadow: 0 0 15px #F5F; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_sub-sections\.scss}line{font-family:\0000366}}
+.sub-sections:hover .edit-button, .sub-sections:hover .edit-button:after {
+  opacity: 1; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_sub-sections\.scss}line{font-family:\0000371}}
+.sub-sections:hover .edit-button {
+  -webkit-transform: rotate(405deg);
+  -ms-transform: rotate(405deg);
+  transform: rotate(405deg); }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_add-form\.scss}line{font-family:\000031}}
+#showAddLinkForm {
+  left: -16px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_add-form\.scss}line{font-family:\000036}}
+#showAddCatForm {
+  right: -16px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_add-form\.scss}line{font-family:\0000310}}
+.show-add-form {
+  position: absolute;
+  top: 4px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+  -webkit-transition: all 0.5s cubic-bezier(0.62, 0, 0.62, 1.8);
+  transition: all 0.5s cubic-bezier(0.62, 0, 0.62, 1.8); }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_add-form\.scss}line{font-family:\0000319}}
+  .show-add-form:before, .show-add-form:after {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #000; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_add-form\.scss}line{font-family:\0000327}}
+  .show-add-form:after {
+    top: 10px;
+    left: 4px;
+    width: 16px;
+    height: 4px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_add-form\.scss}line{font-family:\0000333}}
+  .show-add-form:before {
+    top: 4px;
+    left: 10px;
+    width: 4px;
+    height: 16px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_add-form\.scss}line{font-family:\0000339}}
+  .show-add-form:hover, .show-add-form:active, .show-add-form.hovered {
+    -webkit-transform: rotate(-360deg) scale(1.3);
+    -ms-transform: rotate(-360deg) scale(1.3);
+    transform: rotate(-360deg) scale(1.3);
+    -webkit-box-shadow: 0 0 10px #F0F;
+    box-shadow: 0 0 10px #F0F;
+    -webkit-transition: 0.6s ease;
+    transition: 0.6s ease; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_add-form\.scss}line{font-family:\0000346}}
+.add-form {
+  display: none;
+  max-width: 96%;
+  margin: 0 auto 24px;
+  position: relative; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_add-form\.scss}line{font-family:\0000353}}
+.add-form-title {
+  background-color: #ccc;
+  color: #222;
+  position: absolute;
+  padding: 4px;
+  border-radius: 3px;
+  opacity: 0;
+  -webkit-transition: 0.8s ease-out;
+  transition: 0.8s ease-out; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_add-form\.scss}line{font-family:\0000363}}
+#addCatForm {
+  max-width: 80%;
+  margin: 0 auto 24px;
+  position: relative; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_add-form\.scss}line{font-family:\0000369}}
+.form {
+  margin-bottom: 24px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_add-form\.scss}line{font-family:\0000372}}
+.add-form fieldset, #addCatForm fieldset {
+  text-align: center; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_add-form\.scss}line{font-family:\0000376}}
+#listCat {
+  display: inline-block;
+  background-color: #CCC;
+  color: #222;
+  padding: 2px 5px;
+  position: absolute;
+  bottom: -12px;
+  left: -12px;
+  border-radius: 3px;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_add-form\.scss}line{font-family:\0000386}}
+  #listCat:hover, #listCat .hovered {
+    -webkit-box-shadow: 0 0 18px 4px #F0F;
+    box-shadow: 0 0 18px 4px #F0F;
+    -webkit-transform: scale(1.2) translateZ(0);
+    -ms-transform: scale(1.2) translateZ(0);
+    transform: scale(1.2) translateZ(0); }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_update-form\.scss}line{font-family:\000032}}
+.update-list-form {
+  text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_update-form\.scss}line{font-family:\000034}}
+  .update-list-form fieldset {
+    margin-bottom: 6px;
+    padding: 2px;
+    border: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_update-form\.scss}line{font-family:\000039}}
+  .update-list-form input[name="name"] {
+    border-radius: 3px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_update-form\.scss}line{font-family:\0000314}}
+#home, #home:before, #home:after {
+  display: inline-block;
+  position: absolute; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_update-form\.scss}line{font-family:\0000319}}
+#home {
+  width: 24px;
+  height: 24px;
+  background-color: #CCC;
+  top: 2em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_update-form\.scss}line{font-family:\0000324}}
+  #home:after, #home:before {
+    content: ''; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_update-form\.scss}line{font-family:\0000327}}
+  #home:before {
+    border: 18px solid transparent;
+    border-bottom-color: #CCC;
+    top: -125%;
+    left: -25%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_update-form\.scss}line{font-family:\0000333}}
+  #home:after {
+    width: 6px;
+    height: 12px;
+    background-color: #555;
+    border-radius: 2px 2px 0 0;
+    bottom: 0;
+    left: 50%;
+    -webkit-box-shadow: inset 0 2px 3px #000;
+    box-shadow: inset 0 2px 3px #000; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_update-form\.scss}line{font-family:\0000344}}
+.clear-clicks {
+  display: inline-block;
+  font-size: 0.01em;
+  position: absolute;
+  right: 0;
+  top: 24px;
+  width: 24px;
+  height: 24px;
+  background-color: #05c;
+  -webkit-transform: skewX(-30deg);
+  -ms-transform: skewX(-30deg);
+  transform: skewX(-30deg);
+  border-radius: 3px;
+  -webkit-transition: 0.6s ease-in-out;
+  transition: 0.6s ease-in-out; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_update-form\.scss}line{font-family:\0000356}}
+  .clear-clicks:after {
+    content: '';
+    width: 100%;
+    height: 12px;
+    position: absolute;
+    background-color: #C50;
+    border-radius: 3px 3px 0px 0px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_update-form\.scss}line{font-family:\0000364}}
+  .clear-clicks:hover {
+    -webkit-transform: translateX(-18px) skewX(30deg) rotateX(30deg);
+    -ms-transform: translateX(-18px) skewX(30deg) rotateX(30deg);
+    transform: translateX(-18px) skewX(30deg) rotateX(30deg); }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_update-form\.scss}line{font-family:\0000369}}
+.preview-image {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 33.333%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_db-form\.scss}line{font-family:\000031}}
+#dbFormWrap {
+  text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_db-form\.scss}line{font-family:\000033}}
+  #dbFormWrap p {
+    background-color: #CCC;
+    padding: 4px 8px;
+    border-radius: 3px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_db-form\.scss}line{font-family:\000038}}
+  #dbFormWrap fieldset {
+    display: inline-block;
+    text-align: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_db-form\.scss}line{font-family:\0000312}}
+  #dbFormWrap label, #dbFormWrap input, #dbFormWrap p {
+    margin-bottom: 24px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_db-form\.scss}line{font-family:\0000315}}
+  #dbFormWrap input:not([type='submit']) {
+    width: 14em;
+    margin-right: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_db-form\.scss}line{font-family:\0000319}}
+  #dbFormWrap label {
+    display: inline-block;
+    width: 12em;
+    text-align: right; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_closex\.scss}line{font-family:\000031}}
+.closex {
+  width: 12px;
+  height: 12px;
+  margin: 3px;
+  display: inline-block;
+  position: relative;
+  top: 2px;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_closex\.scss}line{font-family:\0000311}}
+.closex:before, .closex:after {
+  content: "";
+  position: absolute;
+  background: #F20000;
+  border: 1px solid #000; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_closex\.scss}line{font-family:\0000318}}
+.closex:before {
+  left: 50%;
+  width: 20%;
+  margin-left: -15%;
+  height: 100%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_closex\.scss}line{font-family:\0000325}}
+.closex:after {
+  top: 6px;
+  left: 0;
+  height: 20%;
+  margin-top: -15%;
+  width: 100%;
+  text-align: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_closex\.scss}line{font-family:\0000334}}
+.closexWrap {
+  display: inline-block;
+  cursor: pointer;
+  border: 1px solid #000;
+  border-radius: 50%;
+  background-color: #CCC;
+  position: absolute;
+  top: 2px;
+  right: -6px;
+  -webkit-box-shadow: 0 0 0 2px #FFF;
+  box-shadow: 0 0 0 2px #FFF;
+  -webkit-transition: all 1.3s ease;
+  transition: all 1.3s ease; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_closex\.scss}line{font-family:\0000346}}
+.closexWrap:hover {
+  -webkit-box-shadow: 0 0 0 2px #FFF,0 0 10px 2px #F0F;
+  box-shadow: 0 0 0 2px #FFF,0 0 10px 2px #F0F;
+  -webkit-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg); }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_range\.scss}line{font-family:\000031}}
+input[type="range"] {
+  cursor: pointer; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_range\.scss}line{font-family:\000035}}
+#bestOfRange {
+  display: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_range\.scss}line{font-family:\000039}}
+.range_wrap {
+  display: inline-block;
+  position: absolute;
+  top: 108px;
+  right: 0;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  z-index: 10; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_range\.scss}line{font-family:\0000318}}
+.range_display {
+  display: inline-block;
+  position: relative;
+  background-color: #CCC;
+  padding: 2px 4px;
+  margin-top: 4px;
+  border-radius: 3px;
+  opacity: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_range\.scss}line{font-family:\0000329}}
+.range_label:after {
+  content: 'Set number of bestofs ->';
+  color: #CCC;
+  font-size: 0.618em;
+  position: absolute;
+  top: 0;
+  left: -128px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_helpers\.scss}line{font-family:\000031}}
+.delete-button {
+  font-size: 0.1px;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  margin: 3px;
+  background-color: #D00;
+  border: none;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0px 0px 6px rgba(0, 150, 150, 0.6);
+  box-shadow: inset 0px 0px 6px rgba(0, 150, 150, 0.6);
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  -webkit-transform: rotate(0deg) scale(0.8);
+  -ms-transform: rotate(0deg) scale(0.8);
+  transform: rotate(0deg) scale(0.8); }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_helpers\.scss}line{font-family:\0000313}}
+  .delete-button:before, .delete-button:after {
+    display: inline-block;
+    position: absolute;
+    content: '';
+    background-color: #CCC;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    border-radius: 2px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_helpers\.scss}line{font-family:\0000321}}
+  .delete-button:before {
+    width: 12.5%;
+    height: 75%;
+    left: 41.666666%;
+    top: 12.5%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_helpers\.scss}line{font-family:\0000327}}
+  .delete-button:after {
+    width: 75%;
+    height: 12.5%;
+    left: 12.5%;
+    top: 41.666666%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_helpers\.scss}line{font-family:\0000333}}
+  .delete-button:hover {
+    background-color: #F00;
+    -webkit-box-shadow: 0px 0px 5px #F0A;
+    box-shadow: 0px 0px 5px #F0A;
+    -webkit-transform: rotate(360deg) scale(1);
+    -ms-transform: rotate(360deg) scale(1);
+    transform: rotate(360deg) scale(1); }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_helpers\.scss}line{font-family:\0000340}}
+.tiny {
+  -webkit-transform: scale(0.2);
+  -ms-transform: scale(0.2);
+  transform: scale(0.2); }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_helpers\.scss}line{font-family:\0000344}}
+.close {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #CCC;
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+  top: -8px;
+  left: -12px;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  -webkit-box-shadow: 0 0 6px #F0F;
+  box-shadow: 0 0 6px #F0F; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_helpers\.scss}line{font-family:\0000357}}
+  .close:before, .close:after {
+    position: absolute;
+    display: inline-block;
+    content: '';
+    background-color: #222;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg); }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_helpers\.scss}line{font-family:\0000364}}
+  .close:before {
+    width: 2px;
+    height: 8px;
+    left: 5px;
+    top: 2px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/start\/lib\/scss\/startpage\/_helpers\.scss}line{font-family:\0000370}}
+  .close:after {
+    width: 8px;
+    height: 2px;
+    top: 5px;
+    left: 2px; }

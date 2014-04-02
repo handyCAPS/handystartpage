@@ -21,5 +21,25 @@ $config_string = "<?php
 ";
 
 if (file_put_contents('db/sp-config.php', $config_string)) {
-	header('Location: ../index.php');
+	require_once 'db/connection.php';
+
+	$setup_sql = file_get_contents('startpage.sql');
+
+	if ($setup_result = $db->query($setup_sql)) {
+
+		if ($result = $db->query("INSERT INTO `layout` (name, num_best) VALUES ('default', '13')")) {
+			header('Location: ../index.php');
+		} else {
+			// if (DEBUG) {
+				echo $db->error;
+			// }
+		}
+	} else {
+		// if (DEBUG) {
+			echo $db->error;
+			echo $setup_sql;
+			// echo $setup_result;
+		// }
+	}
+
 }

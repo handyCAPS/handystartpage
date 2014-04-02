@@ -20,7 +20,7 @@ function get_the_links($db, $full_array, $server_img_array, $cat_id) {
 	// 			. $assoc['link']
 	// 			. "' target='_blank' id='"
 	// 			. $assoc['id']
-	// 			. "'><div class='flipper'><img src='images/"
+	// 			. "'><div class='flipper'><img src='dist/images/"
 	// 			. $assoc['image']
 	// 			. "' alt='"
 	// 			. $assoc['name']

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Start</title>
-	<link rel="stylesheet" href="css/startpage.css">
+	<link rel="stylesheet" href="css/startpage.min.css">
 	<link rel="icon" type="image/vnd.microsoft.ico" href="img/favicon.ico" />
 </head>
 <body>

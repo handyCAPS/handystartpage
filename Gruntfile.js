@@ -23,7 +23,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'dist/js/startpage.js' : ['lib/js/events.js', 'lib/js/promises.js', 'lib/js/startpage.js']
+          'lib/js/startpage.concat.js' : ['lib/js/events.js', 'lib/js/promises.js', 'lib/js/startpage.js']
         }
       }
     },
@@ -32,8 +32,8 @@ module.exports = function(grunt) {
         banner: '<%= banner %>'
       },
       dist: {
-        src: 'dist/js/startpage.js',
-        dest: 'dist/js/startpage.min.js'
+        src: 'lib/js/startpage.concat.js',
+        dest: 'lib/js/dist/startpage.min.js'
       }
     },
     jshint: {
@@ -61,7 +61,7 @@ module.exports = function(grunt) {
         src: 'Gruntfile.js'
       },
       libTest: {
-        src: 'dist/js/startpage.js'
+        src: 'lib/js/startpage.concat.js'
       }
     },
     sass: {
@@ -75,7 +75,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'lib/scss',
           src: ['**/*.scss'],
-          dest: 'dist/css',
+          dest: 'lib/css',
           ext: '.css'
         }]
       },
@@ -88,7 +88,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'lib/scss',
           src: ['**/*.scss'],
-          dest: 'dist/css',
+          dest: 'lib/css/dist',
           ext: '.min.css'
         }]
       }
@@ -97,9 +97,9 @@ module.exports = function(grunt) {
       all: {
         files: [{
           expand: true,
-          cwd: 'dist/css',
+          cwd: 'lib/css',
           src: ['**/*.css'],
-          dest: 'dist/css'
+          dest: 'lib/css'
         }]
       }
     },
@@ -133,16 +133,41 @@ module.exports = function(grunt) {
     },
     copy: {
       viewsNscripts: {
-        src: ['views/*','scripts/*', 'scripts/db/*'],
+        src: ['views/*','scripts/*', 'scripts/db/connection.php'],
         dest: 'dist/',
         options: {
           process: function(content) {
-            return content.replace(/dist\//g, '' );
+            return content.replace(/lib\//g, '' ).replace(/startpage\.js/g, 'startpage.min.js').replace(/js\/dist/, 'js/').replace(/\.css/, '.min.css');
           }
         }
       },
+      css: {
+        expand: true,
+        flatten: true,
+        src: 'lib/css/dist/*.css',
+        dest: 'dist/css/',
+        options: {
+          process: function(content) {
+            return content.replace(/\.\.\/img/g, 'img');
+          }
+        }
+      },
+      js: {
+        expand: true,
+        flatten: true,
+        src: 'lib/js/dist/*.min.js',
+        dest: 'dist/js/'
+      },
       index: {
         src: 'index.php',
+        dest: 'dist/'
+      },
+      img: {
+        src: 'img/*',
+        dest: 'dist/'
+      },
+      jsVendor: {
+        src: ['bower_components/jquery/dist/jquery.min.js'],
         dest: 'dist/'
       }
     },
@@ -152,7 +177,7 @@ module.exports = function(grunt) {
         tasks: ['jshint:gruntfile']
       },
       js: {
-        files: ['lib/**/*.js'],
+        files: ['lib/js/*.js'],
         tasks: ['concat', 'jshint:libTest', 'uglify']
       },
       php: {
