@@ -4,38 +4,37 @@
 
 #### Making it easier to collect your favourite links.
 
-A home page listing all your collected links, displaying them with an image. You can set a descriptive name which will appear as a tooltip when hovering the link. The links are categorised by your chosen names and ordered by a specified order number. At the top of the page, a best of section appears, listing the ten most clicked links.
+A home page listing all your collected links, displaying them with an image. You can add a description for each link which will appear when your hover over the image. The links are categorised by your chosen names and ordered by a specified order number. At the top of the page, a best of section appears, listing the most clicked links. You can set the amount of bestofs with a little slider. Just because that's cool.
 
-Yes, it's ~~horribly~~ not brilliantly coded and full of bad practices at the moment, but that will get better with every commit. Right now it's just here for some friends to play with. I made it to learn html and css at first and now using it to get better with php, mysql, javascript and whatever else I might think of. Plus it's kinda useful to have all my links in one convenient place.
 
 ## Requires
 -----------
 
-For now, this requires a localhost server to work. I have a [WAMP server](http://www.wampserver.com/en/) setup to handle the PHP. It was originaly meant to run locally (it used to be a flat html file), but I will eventually make it safe enough to run on a web server. As it is, it should definitely not be put online.
-
+A running server, php 5.3 or higher and mysql. I have it running on WAMP server. At the moment it's not safe enough to go online.
 
 ## Set Up
 ---------
 
-1. Install WAMP/LAMP/MAMP.
-2. Clone this repo in the localhost rootfolder or download and place it there
-~~3. Create an images folder in your cloned folder. Call it 'images'~~
-4. Start your server
-5. Go to phpMyAdmin and create a database
-6. Import the sql into that db
-7. Go to localhost/yourfoldername (or the LAMP/MAMP equivalent)
-8. Enter your db credentials
-9. You should be taken to an empty page with two little plusses. The left plus is for adding a link, the right plus is for adding a category. You can also use the hotkeys: ALT + q for a new link and Alt + c for a new category.
-10. Start by adding a category. It needs a name and an order
-11. Now you have one or more categories, you can start adding links
-12. Don't forget to make it your homepage in your favourite browser('s) !
+1. Download all the files in the dist/ folder, found at https://github.com/handyCAPS/handystartpage/tree/master/dist .
+2. Place the files in a folder in your server root.
+3. Create a database table in mysql.
+4. Navigate your browser to the folder containing the files.
+5. Fill out the form with your db credentials.
+6. You should be taken to a screen with two plusses. Hit the right one to create your first category.
+7. Start adding links !
 
 ### Adding links
 ---------------
 
-The add link form has 5 input fields. First the link. This should be the complete link (including http(s)), it's easiest to just copy the url from the address bar.
+The add link form has 6 input fields. First the link. This should be the complete link (including http(s)), it's easiest to just copy the url from the address bar.
 
-Next the image name. This should be the full name (including extension), but without the folder name (unless you're using subfolders). If you hover over the image name input, you should see the image appear next to your pointer. The category can be selected from a dropdown, containing all categories in the db. You can add more by hitting the 'add category' button.
+Next the image. You can upload any image in the .gif, .jp(e)g or .png format. The image should not be larger than 500 kb. Your image gets uploaded as soon as the file input field looses focus.
+
+The name should be short and descriptive, this appears as a title (tooltip) when hovered over the link. It also gets set as the alt text for the image.
+
+The category can be selected from a dropdown, containing all categories in the db. You can add more by hitting the 'add category' button.
+
+The description can be up to 100 characters long, but try to fit it in the box provided, as this is the same size as the place where your description will be shown.
 
 Finally you need to give the link an order. This can be an integer (whole number) or a float (decimal number). The links will appear sorted by their order number.
 
@@ -44,9 +43,7 @@ Finally you need to give the link an order. This can be an integer (whole number
 -------
 
 - Refactor code. This will be ongoing.
-- Automate setting up the db
 - Build a drag and drop ordering interface for the links and the categories
-- Hook up all the js through require ?
 - Make subcategories that will have their own page ?
 - Find or make a quirky and loveable drawing to be my logo
 - Get a cool sounding name that's missing a vowel
