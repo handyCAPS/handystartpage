@@ -137,7 +137,7 @@ module.exports = function(grunt) {
         dest: 'dist/',
         options: {
           process: function(content) {
-            return content.replace(/lib\//g, '' ).replace(/startpage\.concat\.js/g, 'startpage.min.js').replace(/js\/dist/, 'js/').replace(/\.css/, '.min.css');
+            return content.replace(/lib\//g, '' ).replace(/\.concat\.js/g, '.min.js').replace(/js\/dist\//, 'js/').replace(/\.css/, '.min.css');
           }
         }
       },
