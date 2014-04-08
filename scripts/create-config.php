@@ -27,12 +27,15 @@ if (file_put_contents('db/sp-config.php', $config_string)) {
 
 	$sql_array = explode(';', $setup_sql);
 
-	$new = array_pop($sql_array);
+	// $new = array_pop($sql_array);
 
 	$setup = TRUE;
 
-	foreach ($sql_array as $key => $query_string) {
-		if (!$db->query($query_string)) {
+	foreach ($sql_array as $query_string) {
+		$query_string = trim($query_string);
+		if (isset($query_string) &&
+		    !empty($query_string) &&
+		    !$db->query($query_string)) {
 			$setup = FALSE;
 		}
 	}

@@ -1,7 +1,7 @@
 <?php
 
 function update_list_forms($db,$cat) {
-	$link_array = ask_the_db($db, 'links', '*', "cat_id = $cat", 'link_order');
+	$link_array = ask_the_db($db, 'links, images', '*', "links.cat_id = $cat AND links.img_id = images.img_id", 'link_order');
 
 	$form_string = '';
 
@@ -12,6 +12,7 @@ function update_list_forms($db,$cat) {
 		}
 		$idname = strtolower(preg_replace("/[^a-zA-Z]/", '', $name));
 		$categories = category_options($db, $cat_id);
+		$set_image = $img_location . $img_name;
 		$form_string .= "
 		<form enctype='multipart/form-data' method='POST' action='scripts/update-link.php' class='update-list-form'>
 			<fieldset>
@@ -22,7 +23,7 @@ function update_list_forms($db,$cat) {
 					<label for='link'>link</label>
 					<input required type='text' value='$link' name='link' id='link_$idname' class='long'>
 					<label for='image'>img</label>
-					<input type='file' name='image' id='image_$idname' class='medium image-input' value='$image'>
+					<input type='file' name='image' id='image_$idname' class='medium image-input' value='$set_image'>
 					<input type='hidden' name='img_id' id='img_id_$idname' value=''>
 					<label for='description'>desc</label>
 					<textarea name='description' id='description_$idname' class='desc'>$description</textarea>
