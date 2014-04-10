@@ -1,15 +1,5 @@
 <?php
 
-$sql = file_get_contents('scripts/startpage.sql');
+require_once 'scripts/class.talktodb.php';
 
-$single = explode(';', $sql);
-
-foreach ($single as $key => $value) {
-	var_dump($key);
-	echo '<br><br>';
-	var_dump($value);
-}
-
-// echo $sql;
-
-// var_dump($single);
+$dbcall = new TalkToDB();

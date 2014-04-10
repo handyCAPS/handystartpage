@@ -18,7 +18,6 @@ module.exports = function(grunt) {
     },
     concat: {
       options: {
-        banner: '<%= banner %>',
         stripBanners: true
       },
       dist: {
@@ -177,7 +176,7 @@ module.exports = function(grunt) {
         tasks: ['jshint:gruntfile']
       },
       js: {
-        files: ['lib/js/*.js'],
+        files: ['lib/js/*{!.concat}.js'],
         tasks: ['concat', 'jshint:libTest', 'uglify']
       },
       php: {

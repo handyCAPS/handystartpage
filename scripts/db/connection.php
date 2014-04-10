@@ -7,8 +7,8 @@ class start_mysqli extends mysqli {
 	public function __construct($dbhost, $dbuser, $dbpassword, $dbname) {
 		parent::__construct($dbhost, $dbuser, $dbpassword, $dbname);
 
-		if (mysqli_connect_error()) {
-			die('Error connecting');
+		if ($this->connect_errno) {
+			die('Error connecting ' . $this->connect_error);
 		}
 	}
 }
