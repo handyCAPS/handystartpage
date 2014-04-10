@@ -18,7 +18,7 @@ function add_link_to_db($db, $upload_class) {
 	$description = $db->real_escape_string(trim($_POST['description']));
 
 	if ($description === '') {
-		$description = 'No description available';
+		$description = 'No Description Available';
 	}
 
 	if ($uploaded['state']) {

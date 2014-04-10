@@ -93,7 +93,9 @@ function get_the_sub_sections($db, $cat_array, $all_the_links) {
 
 		for (; $i < $len; $i++) {
 			$sub_section =
-			  "<div class='sub-sections'><a href='?update=links&amp;category="
+			  "<div class='sub-sections' id='"
+			. $cat_array[$i]['cat_name']
+			. "'><a href='?update=links&amp;category="
 			. $cat_array[$i]['cat_id']
 			. "'><div class='edit-button' data-catid='"
 			. $cat_array[$i]['cat_id']
