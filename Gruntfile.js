@@ -176,7 +176,7 @@ module.exports = function(grunt) {
         tasks: ['jshint:gruntfile']
       },
       js: {
-        files: ['lib/js/*{!.concat}.js'],
+        files: ['lib/js/*.js', '!*.concat*'],
         tasks: ['concat', 'jshint:libTest', 'uglify']
       },
       php: {
@@ -197,6 +197,6 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
 
   // Default task.
-  grunt.registerTask('default', ['sass', 'autoprefixer', 'jshint', 'concat', 'uglify', 'copy']);
+  grunt.registerTask('default', ['sass', 'autoprefixer', 'concat', 'jshint', 'uglify', 'copy']);
 
 };
