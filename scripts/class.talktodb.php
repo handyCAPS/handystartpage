@@ -240,20 +240,35 @@ class TalkToDB {
 		if (!$this->stmt = $this->db->prepare($this->sql)) {
 			$this->set_errors($this->db->error);
 		}
+		return $this->stmt;
 
 	}
 
 	private $type_array = array();
 
 	private function bind() {
-
-		$this->string_values();
-
 		if ($this->check_values()) {
-			$this->stmt->bind_param($this->type_string, $this,$does,$not,$work);
-
+			call_user_func_array(array($this->stmt, "bind_param"), array_merge(array($this->type_string), $this->value_array));
 		}
+	}
 
+	private function getRefArray() {
+		$refArray = array($this->type_string);
+		foreach($this->value_array as $value) {
+			$refArray[] = &$value;
+		}
+		return $refArray;
+	}
+
+	public function executeQuery() {
+		$this->prepare();
+		call_user_func_array(array($this->stmt, 'bind_param'), $this->getRefArray());
+		$this->stmt->execute();
+		$result = $this->stmt->get_result();
+		while ($row = $result->fetch_array()) {
+			var_dump($row);
+		}
+		var_dump($result);
 	}
 
 	private function string_values() {

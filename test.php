@@ -10,17 +10,15 @@ if($errors = $dbcall->get_errors()) {
 
 $testvalues = array();
 
-for ($i = 0; $i < 2; $i++) {
-	$testvalues[$i] = 'Test' . $i;
-}
+$testvalues = array(2);
 
-$dbcall->query('SELECT')->from(array('users'))->where(array('name = ?', 'id = ?'))->types('ss')->values($testvalues);
+$dbcall->query('SELECT')->from(array('users'))->where(array('id = ?'))->types('s')->values($testvalues);
 
 $dbcall->test('build_query_string');
 
-$dbcall->test('prepare');
+//$dbcall->test('prepare');
 
-$dbcall->test('bind');
-
+//$dbcall->test('bind');
+$dbcall->executeQuery();
 
 var_dump($dbcall);
