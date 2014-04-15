@@ -23,8 +23,6 @@ class TalkToDB {
 	 */
 	private $value_array = array();
 
-	private $value_string;
-
 	/**
 	 * Columns to be created, read or updated
 	 * @var array
@@ -105,11 +103,6 @@ class TalkToDB {
 
 	public function query($type = null) {
 
-		// Look at me, debugging is on my mind
-		if (is_null($type)) {
-			$this->set_errors('No query type set');
-		}
-
 		$this->query_type = $type;
 
 		// Returning self, so the method is chainable
@@ -127,9 +120,6 @@ class TalkToDB {
 	}
 
 	public function types($types = null) {
-		if (is_null($types)) {
-			$this->set_errors('No types have been set');
-		}
 
 		$this->type_string = $types;
 
@@ -138,18 +128,21 @@ class TalkToDB {
 	}
 
 	public function values($values = array()) {
-		if (empty($values)) {
-			$this->set_errors('No values to add');
+
+		$type_array = array();
+
+		foreach ($values as $type => $value) {
+			$type_array[] = $type;
+			$this->value_array[] = $value;
 		}
 
-		$this->value_array = $values;
+		$this->type_string = implode('', $type_array);
+
+		// Returning self, so the method is chainable
+		return $this;
 	}
 
 	public function from($tablename = array()) {
-
-		if (empty($tablename)) {
-			$this->set_errors('No table selected');
-		}
 
 		$this->from_table_array = $tablename;
 
@@ -186,9 +179,44 @@ class TalkToDB {
 		$this->direction = $dir;
 	}
 
+	public function insert($tablename) {
+		$this->query_array[] = "INSERT INTO $tablename";
+		$this->query_type = 'insert';
+		// Returning self, so method is chainable
+		return $this;
+	}
+
+	public function update($tablename) {
+		$this->query_array[] = "UPDATE $tablename SET";
+		$this->query_type = 'update';
+		// Returning self, so method is chainable
+		return $this;
+	}
+
+	private function _buildQueryString() {
+
+		switch (strtolower($this->query_type)) {
+
+			case 'update':
+				$this->query_array[] = implode(' = ?,', $this->column_array);
+				$this->query_array[] = ' = ?';
+				break;
+
+			case 'insert':
+				$this->query_array[] = '(';
+				$this->query_array[] = implode(',', $this->column_array);
+
+			default:
+				# code...
+				break;
+		}
+
+		$this->sql = implode(' ', $this->query_array);
+	}
+
 	private function build_query_string() {
 
-		$this->query_array[] = $this->query_type;
+		// $this->query_array[] = $this->query_type;
 
 		if (!empty($this->from_table_array)) {
 
@@ -244,12 +272,17 @@ class TalkToDB {
 
 	}
 
-	private $type_array = array();
-
 	private function bind() {
 		if ($this->check_values()) {
-			call_user_func_array(array($this->stmt, "bind_param"), array_merge(array($this->type_string), $this->value_array));
+			call_user_func_array(array($this->stmt, "bind_param"), $this->getRefArray());
 		}
+	}
+	private function execute() {
+		$this->stmt->execute();
+	}
+
+	public function getStmt() {
+		return $this->stmt;
 	}
 
 	private function getRefArray() {
@@ -258,21 +291,6 @@ class TalkToDB {
 			$refArray[] = &$value;
 		}
 		return $refArray;
-	}
-
-	public function executeQuery() {
-		$this->prepare();
-		call_user_func_array(array($this->stmt, 'bind_param'), $this->getRefArray());
-		$this->stmt->execute();
-		$result = $this->stmt->get_result();
-		while ($row = $result->fetch_array()) {
-			var_dump($row);
-		}
-		var_dump($result);
-	}
-
-	private function string_values() {
-		$this->value_string = implode(',', $this->value_array);
 	}
 
 	private function check_values() {

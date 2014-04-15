@@ -8,17 +8,21 @@ if($errors = $dbcall->get_errors()) {
 	var_dump($errors);
 }
 
-$testvalues = array();
+// $testvalues = array();
 
 $testvalues = array(2);
 
-$dbcall->query('SELECT')->from(array('users'))->where(array('id = ?'))->types('s')->values($testvalues);
+$dbcall->update('users')
+->columns(array('name', 'color'))
+->values(array('s' => 'Tim', 's' => 'brown'));
 
-$dbcall->test('build_query_string');
+$dbcall->test('_buildQueryString');
 
-//$dbcall->test('prepare');
+$dbcall->test('prepare');
 
-//$dbcall->test('bind');
-$dbcall->executeQuery();
+// $dbcall->test('bind');
+// $dbcall->test('execute');
 
 var_dump($dbcall);
+
+print_r($dbcall->getStmt());
