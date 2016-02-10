@@ -46,11 +46,12 @@ module.exports = function(grunt) {
         noarg: true,
         sub: true,
         undef: true,
-        unused: true,
+        unused: false,
         boss: true,
         eqnull: true,
         browser: true,
         jquery: true,
+        smarttabs: true,
         globals: {
           jQuery: true,
           require: true
@@ -171,6 +172,9 @@ module.exports = function(grunt) {
       }
     },
     watch: {
+      options: {
+        livereload: true
+      },
       gruntfile: {
         files: '<%= jshint.gruntfile.src %>',
         tasks: ['jshint:gruntfile']
@@ -186,9 +190,6 @@ module.exports = function(grunt) {
       sass: {
         files: ['lib/**/*.scss'],
         tasks: ['sass', 'autoprefixer']
-      },
-      options: {
-        livereload: true
       }
     }
   });

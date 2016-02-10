@@ -1,4 +1,5 @@
 <?php
+
 	define('DBNAME', 'startpage');
 	define('DBHOST', 'localhost');
 	define('DBUSER', 'root');

@@ -25,7 +25,7 @@ function get_bestof($db) {
 
 	$bestof_string = '';
 
-	$results = ask_the_db($db, 'links, images', '*','links.img_id = images.img_id', 'clicks', 'DESC', $num_best);
+	$results = ask_the_db($db, 'links, images', '*','links.img_id = images.img_id AND links.cat_id <> 8', 'clicks', 'DESC', $num_best);
 	if (!is_array($results)) {
 
 		if (DEBUG) {

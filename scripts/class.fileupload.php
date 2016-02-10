@@ -48,7 +48,7 @@ Class File_Upload {
 
 		if (!is_writable($uploaddir = $this->root_dir . $dir_name . '/')){
 
-			if (chdir($this->root_dir)) {
+			if (@chdir($this->root_dir)) {
 
 				if (mkdir($dir_name,0777, true)) {
 					$this->get_upload_dir($dir_name);
@@ -57,7 +57,7 @@ Class File_Upload {
 				}
 
 			} else {
-				$this->collect_errors('Couldn\'t change to the root directory.');
+				$this->collect_errors('Couldn\'t change to the root directory.' . $this->get_root_path());
 			}
 
 		}
@@ -67,11 +67,11 @@ Class File_Upload {
 
 	public static function get_root_path() {
 
-		$start = $first_slash = strpos(__FILE__, '\\', strlen($_SERVER['DOCUMENT_ROOT'])) + 1;
+		$start = $first_slash = strpos(__FILE__, '\\', strlen($_SERVER['DOCUMENT_ROOT']) - 1) + 1;
 
 		$length = (strpos(__FILE__, '\\', $first_slash) - $first_slash);
 
-		if (!$root_dir = $_SERVER['DOCUMENT_ROOT'] . '/' . substr(__FILE__, $start, $length) . '/'){
+		if (!$root_dir = $_SERVER['DOCUMENT_ROOT'] . substr(__FILE__, $start, $length) . '/'){
 			$this->collect_errors('Unable to get root path.');
 		}
 

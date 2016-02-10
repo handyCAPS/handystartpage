@@ -1,5 +1,11 @@
 <?php
 
+require_once 'scripts/db/connection.php';
+require_once 'scripts/class.fileupload.php';
+
+print_r(File_Upload::get_root_path());
+exit();
+
 require_once 'scripts/class.talktodb.php';
 
 $dbcall = new TalkToDB();

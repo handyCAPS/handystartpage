@@ -10,7 +10,7 @@
 			height: 72px;
 			width: 72px;
 		}
-		&:hover .flipper, a:focus .flipper {
+		&:not(.shake):hover .flipper, a:not(.shake):focus .flipper {
 			transform: rotateY(180deg) scale(2);
 			z-index: 5;
 				.description {

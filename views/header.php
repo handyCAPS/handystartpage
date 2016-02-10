@@ -8,3 +8,12 @@
 </head>
 <body>
 <div id="outerWrap">
+
+<div class="lift">
+    <div class="arrow-wrap arrow-up">
+        <div class="arrow"></div>
+    </div>
+    <div class="arrow-wrap arrow-down">
+        <div class="arrow"></div>
+    </div>
+</div>

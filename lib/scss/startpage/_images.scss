@@ -9,3 +9,17 @@ img {
 			height: 92px;
 		}
 }
+
+.shake {
+    transform: rotate(0deg);
+    animation: shaker 0.3s infinite linear;
+}
+
+@keyframes shaker {
+    25% {
+        transform: rotate(2deg);
+    }
+    75% {
+        transform: rotate(-2deg);
+    }
+}

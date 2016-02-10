@@ -39,7 +39,9 @@ function get_the_links($db, $full_array, $server_img_array, $cat_id) {
 	if (is_array($server_img_array)) {
 		foreach ($server_img_array as $key => $assoc) {
 			if ($assoc['cat_id'] === $cat_id && !$assoc['image']) {
-				$link = "<div class='container'><a href='"
+				$link = "<div class='container' id='linkid_"
+				. $assoc['id']
+				. "'><a href='"
 				. $assoc['link']
 				. "' target='_blank' id='"
 				. $assoc['id']
@@ -99,7 +101,7 @@ function get_the_sub_sections($db, $cat_array, $all_the_links) {
 			. $cat_array[$i]['cat_id']
 			. "'><div class='edit-button' data-catid='"
 			. $cat_array[$i]['cat_id']
-			. "'></div></a><h2>"
+			. "'></div></a><h2 class='catTitle'>"
 			. $cat_array[$i]['cat_name']
 			. "</h2>";
 			foreach ($all_the_links as $key => $value) {
